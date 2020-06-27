@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% block head %}
+<title>Consultations</title>
+<style>
+    body {
+        padding-top: 30px;
+    }
+    div.form-row {
+        margin-bottom: 40px;
+    }
+</style>
+{% endblock %} {% block body %}
+<div class="container">
+    <h2 class="text-center mb-5">Créer une Consultation</h2>
+    <form action="/consultation" method="POST" class="w-75 mx-auto">
+        <div class="form-row">
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Nom et Prenom</span>
+                    </div>
+                    <input
+                        type="text"
+                        aria-label="First name"
+                        class="form-control"
+                        placeholder="Prenom"
+                        name="givenName"
+                        required
+                    />
+                    <input
+                        type="text"
+                        aria-label="Last name"
+                        class="form-control"
+                        placeholder="Nom"
+                        name="familyName"
+                        required
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-2">
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        value="male"
+                        id="defaultCheck1"
+                        name="gender"
+                    />
+                    <label class="form-check-label" for="defaultCheck1">
+                        male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        value="female"
+                        id="defaultCheck1"
+                        name="gender"
+                    />
+                    <label class="form-check-label" for="defaultCheck1">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Wilaya"
+                        aria-label="Wilaya"
+                        aria-describedby="basic-addon2"
+                        name="wilaya"
+                    />
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"
+                            >Alger</span
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Age</span>
+                    </div>
+                    <input
+                        type="number"
+                        class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)"
+                        placeholder="18"
+                        name="age"
+                        min="1"
+                    />
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Dayra"
+                        aria-label="Dayra"
+                        aria-describedby="basic-addon2"
+                        name="dayra"
+                    />
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"
+                            >Draria</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Symptomes</span>
+                </div>
+                <textarea
+                    class="form-control"
+                    aria-label="With textarea"
+                    placeholder="Inserer vos symptomes chaque un sur une ligne"
+                    name="symptomes"
+                ></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <input type="submit" value="submit" />
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block head %}
+<title>CORONAVIRUS</title>
+<style>
+    body {
+        height: 100vh;
+    }
+</style>
+{% endblock %} {% block body %}
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">
+            Hello, world!
+        </h1>
+        <p class="lead">
+            L’open data sur les données d’évolution de la maladie du covid-19
+        </p>
+        <hr class="my-4" />
+        <p>
+            Why shouldn't you die YET ??
+        </p>
+        <a class="btn btn-primary btn-lg" href="/consultations" role="button"
+            >Get all consultations</a
+        >
+        <a class="btn btn-primary btn-lg" href="/consultation" role="button"
+            >Make a consultation</a
+        >
+    </div>
+</div>
+{% endblock %}

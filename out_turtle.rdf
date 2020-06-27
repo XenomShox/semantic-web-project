@@ -1,0 +1,88 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://poneyponeymastersaga/myontology> a <http://www.w3.org/2002/07/owl#Ontology> .
+
+<https://poneyponeymastersaga/myontology#age> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#patient> ;
+    rdfs:range xsd:integer .
+
+<https://poneyponeymastersaga/myontology#date> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#consultation> ;
+    rdfs:range xsd:dateTime,
+        xsd:string .
+
+<https://poneyponeymastersaga/myontology#dayra> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#patient> ;
+    rdfs:range xsd:string .
+
+<https://poneyponeymastersaga/myontology#familyName> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#person> ;
+    rdfs:range xsd:string .
+
+<https://poneyponeymastersaga/myontology#familyname> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#person> ;
+    rdfs:range xsd:string .
+
+<https://poneyponeymastersaga/myontology#gender> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#person> ;
+    rdfs:range xsd:string .
+
+<https://poneyponeymastersaga/myontology#givenName> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#person> ;
+    rdfs:range xsd:string .
+
+<https://poneyponeymastersaga/myontology#hadConsultation> a <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#patient> ;
+    rdfs:range <https://poneyponeymastersaga/myontology#consultation> .
+
+<https://poneyponeymastersaga/myontology#hasChronicDesease> a <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#patient> ;
+    rdfs:range <https://poneyponeymastersaga/myontology#chronicDesease> .
+
+<https://poneyponeymastersaga/myontology#hasPatient> a <http://www.w3.org/2002/07/owl#FunctionalProperty>,
+        <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#consultation> ;
+    rdfs:range <https://poneyponeymastersaga/myontology#patient> .
+
+<https://poneyponeymastersaga/myontology#hasSymptom> a <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#patient> ;
+    rdfs:range <https://poneyponeymastersaga/myontology#symptoms> .
+
+<https://poneyponeymastersaga/myontology#output> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#consultation> ;
+    rdfs:range xsd:string .
+
+<https://poneyponeymastersaga/myontology#pat> a <http://www.w3.org/2002/07/owl#FunctionalProperty>,
+        <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#consultation> ;
+    rdfs:range <https://poneyponeymastersaga/myontology#patient> .
+
+<https://poneyponeymastersaga/myontology#wilaya> a <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+        <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+    rdfs:domain <https://poneyponeymastersaga/myontology#patient> ;
+    rdfs:range xsd:string .
+
+<https://poneyponeymastersaga/myontology#chronicDesease> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://poneyponeymastersaga/myontology#symptoms> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://poneyponeymastersaga/myontology#consultation> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://poneyponeymastersaga/myontology#person> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://poneyponeymastersaga/myontology#patient> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:subClassOf <https://poneyponeymastersaga/myontology#person> .
+
