@@ -7,6 +7,9 @@
     div.form-row {
         margin-bottom: 40px;
     }
+    input[type="submit"] {
+        transition: all 150ms ease-in-out;
+    }
 </style>
 {% endblock %} {% block body %}
 <div class="container">
@@ -119,7 +122,14 @@
                 </div>
             </div>
         </div>
-            <input type="submit" value="submit" />
+        <div class="form-row text-center">
+            <div class="col">
+                <input
+                    type="submit"
+                    class="btn btn-outline-dark btn-lg btn-block"
+                    value="SUBMIT"
+                />
+            </div>
         </div>
     </form>
 </div>

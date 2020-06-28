@@ -6,27 +6,32 @@
     }
 </style>
 {% endblock %} {% block body %}
-<div class="container d-flex flex-wrap justify-content-around">
-    {% for consultation in consultations %}
-    <div class="card text-center mb-5" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">
-                {{ consultation.patient.givenName + " " +
-                consultation.patient.familyName }}
-            </h5>
-            <p class="card-text">
-                {{ consultation.patient.gender }} - {{ consultation.patient.age
-                }}
-                <br />
-                {{ consultation.date }}
-            </p>
-            <a
-                href="/consultation/{{ consultation.id }}"
-                class="btn btn-primary"
-                >Check Consultation</a
-            >
+<div class="container">
+    <div class="container-fluid d-flex flex-wrap justify-content-around">
+        {% for consultation in consultations %}
+        <div class="card text-center mb-5" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{ consultation.patient.givenName + " " +
+                    consultation.patient.familyName }}
+                </h5>
+                <p class="card-text">
+                    {{ consultation.patient.gender }} - {{
+                    consultation.patient.age }}
+                    <br />
+                    {{ consultation.date }}
+                </p>
+                <a
+                    href="/consultation/{{ consultation.id }}"
+                    class="btn btn-primary"
+                    >Check Consultation</a
+                >
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+    <div class="container-fluid text-center">
+        <a href="/clearall" class="btn btn-outline-dark">Clear ontology</a>
+    </div>
 </div>
 {% endblock %}

@@ -34,7 +34,7 @@
             <p class="card-text">
                 Symptoms :
                 <ol>
-                    {% for symptom in consultation.patient.symptoms %}
+                    {% for symptom in consultation.symptoms %}
                         <li style="text-transform: capitalize;">{{ symptom.replace('_', ' ') }}</li>
                     {% endfor %}
                 </ol>

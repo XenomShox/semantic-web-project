@@ -11,7 +11,11 @@
 {% endblock %} {% block body %}
 <div class="container">
     <h2 class="text-center mb-5">Inserer vos Symptoms</h2>
-    <form action="/consultation/create/asign_symptoms/{{ patient.id }}" method="POST" class="w-75 mx-auto">
+    <form
+        action="/consultation/create/asign_symptoms/{{ patient.idconsultation }}/{{ patient.id }}"
+        method="POST"
+        class="w-75 mx-auto"
+    >
         <div class="form-row">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -24,11 +28,13 @@
                     name="symptomes"
                     rows="6"
                     required
-                >{{ patient.symptomes }}</textarea>
+                >
+{{ patient.symptomes }}</textarea
+                >
             </div>
         </div>
         <div class="form-row">
-            <input type="submit" value="submit" class="btn btn-primary"/>
+            <input type="submit" value="submit" class="btn btn-primary" />
         </div>
     </form>
 </div>

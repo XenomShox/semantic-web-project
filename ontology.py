@@ -40,6 +40,10 @@ with onto:
                     self.hasSymptom.append(onto.search(
                         iri="*" + symp.replace(' ', '_'))[0])
 
+        def asignNewSymptoms(self, symps):
+            self.hasSymptom = []
+            self.asignSymptoms(symps)
+
     class wilaya(DataProperty, FunctionalProperty):
         domain = [patient]
         range = [str]
@@ -64,7 +68,20 @@ with onto:
         range = [chronicDesease]
 
     class consultation(Thing):
-        pass
+        def asignSymptoms(self, symps):
+            for symp in symps:
+                symp = symp.lower()
+                if (onto.search(iri="*" + symp.replace(' ', '_')) == []):
+                    S = symptoms()
+                    S.iri = ns + symp.replace(' ', '_')
+                    self.symptomsPresented.append(S)
+                else:
+                    self.symptomsPresented.append(onto.search(
+                        iri="*" + symp.replace(' ', '_'))[0])
+
+        def asignNewSymptoms(self, symps):
+            self.symptomsPresented = []
+            self.asignSymptoms(symps)
 
     class date(DataProperty, FunctionalProperty):
         domain = [consultation]
@@ -74,6 +91,10 @@ with onto:
         domain = [consultation]
         range = [patient]
 
+    class symptomsPresented(ObjectProperty):
+        domain = [consultation]
+        range = [symptoms]
+
     class output(DataProperty, FunctionalProperty):
         domain = [consultation]
         range = [str]
@@ -82,17 +103,5 @@ with onto:
         domain = [patient]
         range = [consultation]
 
-# soreness = symptoms("soreness")
-# soreThroat = symptoms("soreThroat")
-# nasalCongestion = symptoms("nasalCongestion")
-# runnyNose = symptoms("runnyNose")
-# cough = symptoms("cough")
-# dryCough = symptoms("dryCough")
-# diarrhea = symptoms('diarrhea')
-# fever = symptoms('fever')
-# fatigue = symptoms('fatigue')
-# pneumonia = symptoms('pneumonia')
-# severePneumonia = symptoms('severePneumonia')
-# SDRA = symptoms('SDRA')
-# septicShock = symptoms('septicShock')
-# sepsis = symptoms('sepsis')
+    class minor(Thing):
+        equivalent_to = [patient & (age.value(int) < 18)]

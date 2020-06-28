@@ -3,16 +3,6 @@ from ontology import onto, symptoms, ns, patient, consultation
 import rdflib
 import csv
 
-# def asignSymptoms(_patient, symps):
-#     for symp in symps:
-#         symp = symp.lower()
-#         if (onto.search(iri="*" + symp.replace(' ', '_')) == []):
-#             S = symptoms()
-#             S.iri = ns + symp.replace(' ', '_')
-#             _patient.hasSymptom.append(S)
-#         else:
-#             _patient.hasSymptom.append(onto.search(
-#                 iri="*" + symp.replace(' ', '_'))[0])
 
 def addPatient(givenName, familyName, gender, age, dayra, wilaya, symps):
     _patient = patient(givenName=givenName, familyName=familyName,
@@ -89,7 +79,8 @@ def getConsultationData(_consultation):
         "patient": getPatientData(_consultation.hasPatient),
         "date": _consultation.date,
         "output": _consultation.output,
-        "id": _consultation.name
+        "id": _consultation.name,
+        "symptoms": symptomsToList(_consultation.symptomsPresented)
     }
     return consultationDic
 
@@ -122,21 +113,27 @@ def getIndividualsByClass(c):
 def getIndividualByURI(iri):
     return onto.search(iri="*" + iri)[0]
 
-# print(getIndividualByURI('consultation2'))
-# destroy_entity(getIndividualByURI("patient3"))
-# dbCommit()
-# request = """
-# prefix ns1: <https://poneyponeymastersaga/myontology#>
-# prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-# SELECT ?sn
-# WHERE{
-#     ?s rdf:type ns1:symptoms .
-#     ?s ns1:sympName ?sn
-#     FILTER regex(?sn, "fever")
-# }
-# """
-# clearIndividualsByClass(symptoms)
-# clearIndividualsByClass(patient)
-# clearIndividualsByClass(consultation)
-# dbCommit()
+
+def find_v1(clas, attributes):
+    individuals = getIndividualsByClass(clas)
+    lis = []
+    for individual in individuals:
+        checked = True
+        for key, value in attributes.items():
+            if not (getattr(individual, key) == value):
+                checked = False
+                break
+        if checked:
+            lis.append(individual)
+    return lis
+
+
+def find_v2(_object, dic={}):
+    objects = getIndividualsByClass(_object)
+    L = []
+    for o in objects:
+        s = tuple([getattr(o, x) for x in dic])
+        _s = tuple([dic[x] for x in dic])
+        if s == _s:
+            L.append(o)
+    return L
