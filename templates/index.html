@@ -3,6 +3,8 @@
 <style>
     body {
         height: 100vh;
+        display: flex;
+        align-items: center;
     }
 </style>
 {% endblock %} {% block body %}
@@ -21,7 +23,10 @@
         <a class="btn btn-primary btn-lg" href="/consultations" role="button"
             >Get all consultations</a
         >
-        <a class="btn btn-primary btn-lg" href="/consultation" role="button"
+        <a
+            class="btn btn-primary btn-lg"
+            href="/consultation/create"
+            role="button"
             >Make a consultation</a
         >
     </div>

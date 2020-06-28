@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block head %}
+<title>Consultations</title>
+<style>
+    body {
+        padding-top: 30px;
+    }
+    div.form-row {
+        margin-bottom: 40px;
+    }
+</style>
+{% endblock %} {% block body %}
+<div class="container">
+    <h2 class="text-center mb-5">Inserer vos Symptoms</h2>
+    <form action="/consultation/create/asign_symptoms/{{ patient.id }}" method="POST" class="w-75 mx-auto">
+        <div class="form-row">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Symptomes</span>
+                </div>
+                <textarea
+                    class="form-control"
+                    aria-label="With textarea"
+                    placeholder="Inserer vos symptomes chaque un sur une ligne"
+                    name="symptomes"
+                    rows="6"
+                    required
+                >{{ patient.symptomes }}</textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <input type="submit" value="submit" class="btn btn-primary"/>
+        </div>
+    </form>
+</div>
+{% endblock %}

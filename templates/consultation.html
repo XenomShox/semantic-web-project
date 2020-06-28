@@ -2,27 +2,57 @@
 <title>Consultations</title>
 <style>
     body {
-        padding-top: 30px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 </style>
 {% endblock %} {% block body %}
-<div class="container d-flex flex-wrap justify-content-between">
-    {% for consultation in consultations %}
-    <div class="card text-center mb-5" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">
-                {{ consultation.patient.givenName + " " +
+<div class="container d-flex justify-content-center">
+    <div class="card bg-light" style="width: 65%;">
+        <div class="card-header">
+            <h3 class="card-title">
+                Nom Complet: {{ consultation.patient.givenName + " - " +
                 consultation.patient.familyName }}
-            </h5>
+            </h3>
+        </div>
+        <div class="card-body">
             <p class="card-text">
-                {{ consultation.patient.gender }} - {{ consultation.patient.age
-                }}
-                <br />
-                {{ consultation.date }}
+                Age: {{consultation.patient.age}}
             </p>
-            <a href="#" class="btn btn-primary">Check Consultation</a>
+            <p class="card-text">
+                Sex: {{consultation.patient.gender}}
+            </p>
+            <p class="card-text">
+                Wilaya: {{consultation.patient.wilaya}}
+            </p>
+            <p class="card-text">
+                Dayra: {{consultation.patient.dayra}}
+            </p>
+            <p class="card-text">
+                Symptoms :
+                <ol>
+                    {% for symptom in consultation.patient.symptoms %}
+                        <li style="text-transform: capitalize;">{{ symptom.replace('_', ' ') }}</li>
+                    {% endfor %}
+                </ol>
+            </p>
+        </div>
+        <div class="card-footer">
+            <form action="/consultation/{{ consultation.id }}" method="POST">
+                <div class="form-group">
+                    <label for="verdict">Verdict do Medecin</label>
+                    {% if consultation.output is not none %}
+                    <textarea class="form-control" id="verdict" rows="6" name="output">{{ consultation.output }}</textarea>
+                    {% else %}
+                    <textarea class="form-control" id="verdict" rows="6" name="output"></textarea>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
-    {% endfor %}
 </div>
 {% endblock %}

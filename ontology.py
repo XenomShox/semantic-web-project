@@ -29,9 +29,16 @@ with onto:
         range = [str]
 
     class patient(person):
-        def addSymptom(self, symptom):
-            x = symptoms(sympName=symptom)
-            self.hasSymptom(x)
+        def asignSymptoms(self, symps):
+            for symp in symps:
+                symp = symp.lower()
+                if (onto.search(iri="*" + symp.replace(' ', '_')) == []):
+                    S = symptoms()
+                    S.iri = ns + symp.replace(' ', '_')
+                    self.hasSymptom.append(S)
+                else:
+                    self.hasSymptom.append(onto.search(
+                        iri="*" + symp.replace(' ', '_'))[0])
 
     class wilaya(DataProperty, FunctionalProperty):
         domain = [patient]

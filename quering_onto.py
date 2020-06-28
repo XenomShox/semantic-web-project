@@ -3,19 +3,21 @@ from ontology import onto, symptoms, ns, patient, consultation
 import rdflib
 import csv
 
+# def asignSymptoms(_patient, symps):
+#     for symp in symps:
+#         symp = symp.lower()
+#         if (onto.search(iri="*" + symp.replace(' ', '_')) == []):
+#             S = symptoms()
+#             S.iri = ns + symp.replace(' ', '_')
+#             _patient.hasSymptom.append(S)
+#         else:
+#             _patient.hasSymptom.append(onto.search(
+#                 iri="*" + symp.replace(' ', '_'))[0])
 
 def addPatient(givenName, familyName, gender, age, dayra, wilaya, symps):
     _patient = patient(givenName=givenName, familyName=familyName,
                        gender=gender, age=age, dayra=dayra, wilaya=wilaya)
-    for symp in symps:
-        symp = symp.lower()
-        if (onto.search(iri="*" + symp.replace(' ', '_')) == []):
-            S = symptoms()
-            S.iri = ns + symp.replace(' ', '_')
-            _patient.hasSymptom.append(S)
-        else:
-            _patient.hasSymptom.append(onto.search(
-                iri="*" + symp.replace(' ', '_'))[0])
+    _patient.asignSymptoms(symps)
     return _patient
 
 
@@ -35,6 +37,10 @@ def addConsultation(_patient):
     return _consultation
 
 
+def getConsultations():
+    return onto.search(type=consultation)
+
+
 def dbCommit():
     onto.save(file="out.rdf", format="ntriples")
     graph = rdflib.Graph()
@@ -48,24 +54,77 @@ def clearIndividualsByClass(classs):
         destroy_entity(i)
 
 
-def write(onto):
-    with open('patinets.csv', mode='w') as employee_file:
-        patientWriter = csv.writer(
-            employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-
-        patientWriter.writerow(
-            ['Nom', 'Prenom', 'Sexe', 'age', 'dayra', 'wilaya', 'Symptoms'])
-        patientList = onto.search(type=patient)
+def write(patientList):  # give her the getpatients method
+    with open('patinets.csv', mode='w') as csv_file:
+        fieldnames = ['givenName', 'familyName', 'gender',
+                      'wilaya', 'dayra', 'age', 'symptoms']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
         for _patient in patientList:
-            symptomsList = ""
-            for L in _patient.hasSymptom:
-                symptomsList += "." + \
-                    L.iri.replace(
-                        "https://poneyponeymastersaga/myontology#", "")
-            patientWriter.writerow([_patient.familyName, _patient.givenName, _patient.gender,
-                                    _patient.age, _patient.dayra, _patient.wilaya, symptomsList])
+            writer.writerow(getPatientData(_patient))
+
+# you give her the getConsultations method as an argument returns a list of dictionaries.
 
 
+def symptomsToList(X):
+    # symptomsList = ""
+    lis = []
+    for L in X:
+        # symptomsList += L.iri.replace(
+        #     "https://poneyponeymastersaga/myontology#", "") + separator
+        lis.append(L.name)
+    return lis
+
+
+def getConsultationsData(csMap):
+    consultationsList = []
+    for cs in csMap:
+        consultationsList.append(getConsultationData(cs))
+    return consultationsList
+
+
+# you give her a consultation and it returns it's data in a dic
+def getConsultationData(_consultation):
+    consultationDic = {
+        "patient": getPatientData(_consultation.hasPatient),
+        "date": _consultation.date,
+        "output": _consultation.output,
+        "id": _consultation.name
+    }
+    return consultationDic
+
+
+def getPatientData(_patient):  # you give her a patient and it returns it's data in a dic
+    patientDic = {
+        "givenName": _patient.givenName,
+        "familyName": _patient.familyName,
+        "gender": _patient.gender,
+        "wilaya": _patient.wilaya,
+        "dayra": _patient.dayra,
+        "age": _patient.age,
+        "symptoms": symptomsToList(_patient.hasSymptom)
+    }
+    return patientDic
+
+
+# you give her the getpatients method as an argument sand it returns a list of dictionaries
+def getPatientsData(patients):
+    patientsList = []
+    for _patient in patients:
+        patientsList.append(getPatientData(_patient))
+    return patientsList
+
+
+def getIndividualsByClass(c):
+    return onto.search(type=c)
+
+
+def getIndividualByURI(iri):
+    return onto.search(iri="*" + iri)[0]
+
+# print(getIndividualByURI('consultation2'))
+# destroy_entity(getIndividualByURI("patient3"))
+# dbCommit()
 # request = """
 # prefix ns1: <https://poneyponeymastersaga/myontology#>
 # prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>

@@ -11,7 +11,7 @@
 {% endblock %} {% block body %}
 <div class="container">
     <h2 class="text-center mb-5">Créer une Consultation</h2>
-    <form action="/consultation" method="POST" class="w-75 mx-auto">
+    <form action="/consultation/create" method="POST" class="w-75 mx-auto">
         <div class="form-row">
             <div class="col">
                 <div class="input-group">
@@ -46,6 +46,7 @@
                         value="male"
                         id="defaultCheck1"
                         name="gender"
+                        required
                     />
                     <label class="form-check-label" for="defaultCheck1">
                         male
@@ -58,6 +59,7 @@
                         value="female"
                         id="defaultCheck1"
                         name="gender"
+                        required
                     />
                     <label class="form-check-label" for="defaultCheck1">
                         Female
@@ -73,6 +75,7 @@
                         aria-label="Wilaya"
                         aria-describedby="basic-addon2"
                         name="wilaya"
+                        required
                     />
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-addon2"
@@ -93,6 +96,7 @@
                         placeholder="18"
                         name="age"
                         min="1"
+                        required
                     />
                 </div>
             </div>
@@ -105,6 +109,7 @@
                         aria-label="Dayra"
                         aria-describedby="basic-addon2"
                         name="dayra"
+                        required
                     />
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-addon2"
@@ -114,20 +119,6 @@
                 </div>
             </div>
         </div>
-        <div class="form-row">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Symptomes</span>
-                </div>
-                <textarea
-                    class="form-control"
-                    aria-label="With textarea"
-                    placeholder="Inserer vos symptomes chaque un sur une ligne"
-                    name="symptomes"
-                ></textarea>
-            </div>
-        </div>
-        <div class="form-row">
             <input type="submit" value="submit" />
         </div>
     </form>
