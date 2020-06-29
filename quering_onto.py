@@ -1,12 +1,17 @@
 from owlready2 import *
-from ontology import onto, symptoms, ns, patient, consultation, wilaya
+from ontology import onto, symptoms, ns, patient, consultation, wilaya, dayra
 import rdflib
 import csv
 
 
 def addPatient(givenName, familyName, gender, age, dayra, wilaya, symps):
+    w = find_v2(onto.wilaya, {
+        "wilayaName": wilaya
+    })[0]
+    print(w)
+
     _patient = patient(givenName=givenName, familyName=familyName,
-                       gender=gender, age=age, dayra=dayra, wilaya=wilaya)
+                       gender=gender, age=age, wilaya=w)
     _patient.asignSymptoms(symps)
     return _patient
 
@@ -23,7 +28,7 @@ def addConsultation(_patient):
     d = datetime.datetime.now().date()
     _consultation = consultation(date=str(d))
     _consultation.hasPatient = _patient
-    _patient.hadConsultation.append(_consultation)
+    # _patient.hadConsultation.append(_consultation)
     return _consultation
 
 
@@ -90,8 +95,8 @@ def getPatientData(_patient):  # you give her a patient and it returns it's data
         "givenName": _patient.givenName,
         "familyName": _patient.familyName,
         "gender": _patient.gender,
-        "wilaya": _patient.wilaya,
-        "dayra": _patient.dayra,
+        "wilaya": _patient.wilaya.wilayaName,
+        # "dayra": _patient.dayra.dayraName,
         "age": _patient.age,
         "symptoms": symptomsToList(_patient.hasSymptom)
     }
@@ -137,6 +142,3 @@ def find_v2(_object, dic={}):
         if s == _s:
             L.append(o)
     return L
-
-
-dbCommit()

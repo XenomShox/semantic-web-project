@@ -12,7 +12,8 @@ def index():
 
 @app.route('/consultations')
 def consultations():
-    csMap = getIndividualsByClass(onto.consultation)
+    csMap = find_v2(onto.consultation)
+    print(csMap[0].hasPatient)
     # csMap = csMap[1:]
     consultations = getConsultationsData(csMap)
     return render_template('consultations.html', consultations=consultations)
@@ -41,6 +42,7 @@ def createConsultation():
         wilaya = request.form['wilaya']
         age = request.form['age']
         dayra = request.form['dayra']
+        # print(wilaya)
         # symptomes = [i.strip() for i in request.form['symptomes'].split('\n')]
         try:
             patients = find_v2(onto.patient, {
@@ -53,13 +55,18 @@ def createConsultation():
                                       gender, age, dayra, wilaya, [])
             else:
                 _patient = patients[0]
+            print("created patient")
             _consultation = addConsultation(_patient)
             dbCommit()
             return redirect('/consultation/create/asign_symptoms/' + _consultation.name + "/" + _patient.name)
-        except:
+            # return redirect('/consultation/create')
+        except Exception as e:
+            print(str(e))
             return "Something went wront while saving your consultation"
     else:
-        return render_template('create_consultation.html')
+        w = find_v2(onto.wilaya)
+        wilayas = [i.wilayaName for i in w]
+        return render_template('create_consultation.html', wilayas=wilayas)
 
 
 @app.route('/consultation/create/asign_symptoms/<idconsultation>/<idpatient>', methods=['GET', 'POST'])

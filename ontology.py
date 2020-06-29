@@ -57,15 +57,31 @@ with onto:
         domain = [wilaya]
         range = [str]
 
-    class containPatient(location >> patient):
+    class containPatientWilaya(wilaya >> patient):
         pass
 
-    class inLocation(patient >> location):
-        inverse_property = containPatient
+    class inWilaya(patient >> wilaya, FunctionalProperty):
+        python_name = "wilaya"
+        inverse_property = containPatientWilaya
 
-    class dayra(DataProperty, FunctionalProperty):
-        domain = [patient]
-        range = [str]
+    class dayra(location):
+        pass
+
+    class dayraName(dayra >> str, FunctionalProperty):
+        pass
+
+    class containPatientDayra(dayra >> patient):
+        pass
+
+    class inDayra(patient >> dayra, FunctionalProperty):
+        python_name = "dayra"
+        inverse_property = containPatientDayra
+
+    # class hasIn(wilaya >> dayra):
+    #     pass
+
+    # class inPartOf(dayra >> wilaya, FunctionalProperty):
+    #     inverse_proprety = hasIn
 
     class age(DataProperty, FunctionalProperty):
         domain = [patient]
@@ -102,10 +118,6 @@ with onto:
         domain = [consultation]
         range = [str]
 
-    class hasPatient(ObjectProperty, FunctionalProperty):
-        domain = [consultation]
-        range = [patient]
-
     class symptomsPresented(ObjectProperty):
         domain = [consultation]
         range = [symptoms]
@@ -114,7 +126,8 @@ with onto:
         domain = [consultation]
         range = [str]
 
-    class hadConsultation(ObjectProperty, FunctionalProperty):
-        domain = [patient]
-        range = [consultation]
-        inverse_property = hasPatient
+    class hadConsultation(patient >> consultation):
+        pass
+
+    class hasPatient(consultation >> patient, FunctionalProperty):
+        inverse_property = hadConsultation

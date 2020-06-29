@@ -71,20 +71,16 @@
             </div>
             <div class="col-4">
                 <div class="input-group mb-3">
-                    <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Wilaya"
-                        aria-label="Wilaya"
-                        aria-describedby="basic-addon2"
+                    <select
                         name="wilaya"
-                        required
-                    />
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon2"
-                            >Alger</span
-                        >
-                    </div>
+                        multiple
+                        class="form-control"
+                        id="exampleFormControlSelect1"
+                    >
+                        {% for wilaya in wilayas %}
+                        <option value="{{ wilaya }}">{{ wilaya }}</option>
+                        {% endfor %}
+                    </select>
                 </div>
             </div>
             <div class="col-2">
