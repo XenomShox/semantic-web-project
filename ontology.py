@@ -44,9 +44,24 @@ with onto:
             self.hasSymptom = []
             self.asignSymptoms(symps)
 
-    class wilaya(DataProperty, FunctionalProperty):
-        domain = [patient]
+    # class location(Thing):
+    #     pass
+
+    class location(Thing):
+        pass
+
+    class wilaya(location):
+        pass
+
+    class wilayaName(DataProperty, FunctionalProperty):
+        domain = [wilaya]
         range = [str]
+
+    class containPatient(location >> patient):
+        pass
+
+    class inLocation(patient >> location):
+        inverse_property = containPatient
 
     class dayra(DataProperty, FunctionalProperty):
         domain = [patient]
@@ -99,9 +114,7 @@ with onto:
         domain = [consultation]
         range = [str]
 
-    class hadConsultation(ObjectProperty):
+    class hadConsultation(ObjectProperty, FunctionalProperty):
         domain = [patient]
         range = [consultation]
-
-    class minor(Thing):
-        equivalent_to = [patient & (age.value(int) < 18)]
+        inverse_property = hasPatient

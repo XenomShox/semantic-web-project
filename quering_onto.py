@@ -1,5 +1,5 @@
 from owlready2 import *
-from ontology import onto, symptoms, ns, patient, consultation
+from ontology import onto, symptoms, ns, patient, consultation, wilaya
 import rdflib
 import csv
 
@@ -137,3 +137,6 @@ def find_v2(_object, dic={}):
         if s == _s:
             L.append(o)
     return L
+
+
+dbCommit()
