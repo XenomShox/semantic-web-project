@@ -74,8 +74,8 @@ def asign_symptoms(idconsultation, idpatient):
     _patient = getIndividualByURI(idpatient)
     _consultation = getIndividualByURI(idconsultation)
     if request.method == 'POST':
-        symptomes = [i.strip() for i in request.form['symptomes'].strip().split(
-            '\n') if len(i.strip()) > 0]
+        symps = request.form.getlist('symptoms[]')
+        symptomes = [i.strip() for i in symps if len(i.strip()) > 0]
         _patient.asignNewSymptoms(symptomes)
         _consultation.asignNewSymptoms(symptomes)
         dbCommit()
@@ -83,7 +83,7 @@ def asign_symptoms(idconsultation, idpatient):
     else:
         patientData = {
             "id": idpatient,
-            "symptomes": "\n".join(symptomsToList(_patient.hasSymptom)),
+            "symptomes": symptomsToList(_patient.hasSymptom),
             "idconsultation": idconsultation}
         return render_template('create_consultation_asign_symptoms.html', patient=patientData)
 
@@ -95,6 +95,16 @@ def clearAll():
     clearIndividualsByClass(onto.consultation)
     dbCommit()
     return redirect('/')
+
+
+@app.route('/form', methods=['GET', 'POST'])
+def form():
+    if request.method == 'POST':
+        data = request.form.getlist('name[]')
+        print(data)
+        return redirect('/form')
+    else:
+        return render_template('form.html')
 
 
 if __name__ == '__main__':

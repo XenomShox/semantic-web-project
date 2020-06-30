@@ -62,11 +62,8 @@ def write(patientList):  # give her the getpatients method
 
 
 def symptomsToList(X):
-    # symptomsList = ""
     lis = []
     for L in X:
-        # symptomsList += L.iri.replace(
-        #     "https://poneyponeymastersaga/myontology#", "") + separator
         lis.append(L.name)
     return lis
 

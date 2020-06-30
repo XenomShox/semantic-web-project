@@ -1,5 +1,4 @@
 {% extends 'base.html' %} {% block head %}
-<meta id="symptom-data" data-symptoms="{{ patient.symptomes }}" />
 <title>Consultations</title>
 <style>
     body {
@@ -22,11 +21,7 @@
 {% endblock %} {% block body %}
 <div class="container d-flex flex-column align-items-center">
     <h1 class="mb-5">Ajouter Vos Symptoms</h1>
-    <form
-        action="/consultation/create/asign_symptoms/{{ patient.idconsultation }}/{{ patient.id }}"
-        method="POST"
-        class="w-75"
-    >
+    <form action="/form" method="POST" class="w-75">
         <div
             class="form-group d-flex flex-column justify-content-start align-items-center"
             id="symptoms-inputs"
@@ -41,7 +36,7 @@
         </div>
     </form>
     <script>
-        function addInput(val) {
+        function addInput() {
             const formGroup = $("div#symptoms-inputs");
 
             const rem = $("<button></button>", {
@@ -73,10 +68,9 @@
 
             const input = $("<input />", {
                 type: "text",
-                name: "symptoms[]",
+                name: "name[]",
                 class: "form-control w-75",
                 placeholder: "Symptom",
-                value: val
             });
 
             div.append(labelDiv);
@@ -84,23 +78,11 @@
             formGroup.append(div);
         }
 
-        let symptomes  = {{ patient.symptomes|safe }}
-        symptomes.forEach(symptom => {
-            addInput(symptom);
-        })
-        addInput("");
-        // let symptomData = $("#symptom-data").data();
-        // console.log(symptomData.symptoms.match(new RegExp("'(.+)'+")));
+        addInput();
         $("button#add-symptom-button").click((e) => {
             e.preventDefault();
-            addInput("");
+            addInput();
         });
-        // for (let i = 0; i < labelDivs.length; i++) {
-        //     labelDivs[i].click((e) => {
-        //         e.preventDefault();
-        //         console.log(labelDivs[i].parent());
-        //     });
-        // }
     </script>
 </div>
 {% endblock %}
