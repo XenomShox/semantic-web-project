@@ -13,8 +13,6 @@ def index():
 @app.route('/consultations')
 def consultations():
     csMap = find_v2(onto.consultation)
-    print(csMap[0].hasPatient)
-    # csMap = csMap[1:]
     consultations = getConsultationsData(csMap)
     return render_template('consultations.html', consultations=consultations)
 

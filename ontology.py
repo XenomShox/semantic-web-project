@@ -3,10 +3,17 @@ import datetime
 import pandas as pd
 from openpyxl import load_workbook
 import rdflib
+import os
+from os.path import isfile
 
 ns = "https://poneyponeymastersaga/myontology#"
-# default_world.set_backend(filename="file_back3.sqlite3", exclusive=False)
-# On crée une nouvelle ontologie
+
+if not isfile('./out.rdf'):
+    open('out.rdf', 'w')
+if not isfile('./out_turtle.rdf'):
+    open('out_turtle.rdf', 'w')
+
+
 onto = get_ontology("out.rdf").load()
 
 with onto:
