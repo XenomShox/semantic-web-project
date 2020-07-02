@@ -1,0 +1,251 @@
+<out.rdf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<out.rdf#person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<out.rdf#symptoms> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#symptoms> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<out.rdf#givenName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#givenName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#givenName> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#person> .
+<out.rdf#givenName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#familyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#familyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#familyName> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#person> .
+<out.rdf#familyName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#gender> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#person> .
+<out.rdf#gender> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <out.rdf#person> .
+<out.rdf#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<out.rdf#wilaya> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#wilaya> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <out.rdf#location> .
+<out.rdf#wilayaName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#wilayaName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#wilayaName> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#wilaya> .
+<out.rdf#wilayaName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#containPatientWilaya> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#containPatientWilaya> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#wilaya> .
+<out.rdf#containPatientWilaya> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#patient> .
+<out.rdf#inWilaya> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#inWilaya> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#inWilaya> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#inWilaya> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#wilaya> .
+<out.rdf#containPatientWilaya> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#inWilaya> .
+<out.rdf#dayra> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#dayra> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <out.rdf#location> .
+<out.rdf#dayraName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#dayraName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#dayraName> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#dayra> .
+<out.rdf#dayraName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#containPatientDayra> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#containPatientDayra> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#dayra> .
+<out.rdf#containPatientDayra> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#patient> .
+<out.rdf#inDayra> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#inDayra> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#inDayra> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#inDayra> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#dayra> .
+<out.rdf#containPatientDayra> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#inDayra> .
+<out.rdf#age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#age> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#age> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<out.rdf#isSymptomOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#isSymptomOf> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#isSymptomOf> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#symptoms> .
+<out.rdf#hasSymptom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#symptoms> .
+<out.rdf#isSymptomOf> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#hasSymptom> .
+<out.rdf#diseases> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#diseases> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<out.rdf#isDiseaseOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#isDiseaseOf> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#isDiseaseOf> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#symptoms> .
+<out.rdf#hasDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#hasDisease> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#hasDisease> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#diseases> .
+<out.rdf#isDiseaseOf> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#hasDisease> .
+<out.rdf#traitments> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#traitments> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<out.rdf#isTraitmentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#isTraitmentOf> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#isTraitmentOf> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#symptoms> .
+<out.rdf#hasTraitment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#hasTraitment> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#hasTraitment> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#traitments> .
+<out.rdf#isTraitmentOf> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#hasTraitment> .
+<out.rdf#consultation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<out.rdf#consultation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<out.rdf#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#date> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#consultation> .
+<out.rdf#date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#symptomsPresented> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#symptomsPresented> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#consultation> .
+<out.rdf#symptomsPresented> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#symptoms> .
+<out.rdf#output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<out.rdf#output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#output> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#consultation> .
+<out.rdf#output> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#hadConsultation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#hadConsultation> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#patient> .
+<out.rdf#hadConsultation> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#consultation> .
+<out.rdf#hasPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<out.rdf#hasPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<out.rdf#hasPatient> <http://www.w3.org/2000/01/rdf-schema#domain> <out.rdf#consultation> .
+<out.rdf#hasPatient> <http://www.w3.org/2000/01/rdf-schema#range> <out.rdf#patient> .
+<out.rdf#hadConsultation> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#hasPatient> .
+<out.rdf#wilaya1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya23> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya23> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya30> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya30> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya33> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya33> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya34> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya34> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya35> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya35> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya36> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya36> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya37> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya37> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya38> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya38> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya39> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya39> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya40> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya40> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya41> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya41> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya42> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya42> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya43> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya43> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya44> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya44> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya45> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya45> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya46> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya46> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya47> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya47> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#wilaya48> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<out.rdf#wilaya48> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <out.rdf#wilaya> .
+<out.rdf#inWilaya> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#containPatientWilaya> .
+<out.rdf#inDayra> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#containPatientDayra> .
+<out.rdf#hasSymptom> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#isSymptomOf> .
+<out.rdf#hasDisease> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#isDiseaseOf> .
+<out.rdf#hasTraitment> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#isTraitmentOf> .
+<out.rdf#hasPatient> <http://www.w3.org/2002/07/owl#inverseOf> <out.rdf#hadConsultation> .
+<out.rdf#wilaya1> <out.rdf#wilayaName> "1- Adrar"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya2> <out.rdf#wilayaName> "2- Chlef"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya3> <out.rdf#wilayaName> "3- Laghouat"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya4> <out.rdf#wilayaName> "4- Oum El Bouaghi"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya5> <out.rdf#wilayaName> "5- Batna"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya6> <out.rdf#wilayaName> "6- Bejaia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya7> <out.rdf#wilayaName> "7- Biskra"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya8> <out.rdf#wilayaName> "8- Bechar"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya9> <out.rdf#wilayaName> "9- Blida"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya10> <out.rdf#wilayaName> "10- Bouira"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya11> <out.rdf#wilayaName> "11- Tamanrasset"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya12> <out.rdf#wilayaName> "12- Tebessa"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya13> <out.rdf#wilayaName> "13- Tlemcen"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya14> <out.rdf#wilayaName> "14- Tiaret"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya15> <out.rdf#wilayaName> "15- Tizi Ouzou"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya16> <out.rdf#wilayaName> "16- Alger"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya17> <out.rdf#wilayaName> "17- Djelfa"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya18> <out.rdf#wilayaName> "18- Jijel"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya19> <out.rdf#wilayaName> "19- Setif"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya20> <out.rdf#wilayaName> "20- Saida"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya21> <out.rdf#wilayaName> "21- Skikda"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya22> <out.rdf#wilayaName> "22- Sidi Bel Abbes"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya23> <out.rdf#wilayaName> "23- Annaba"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya24> <out.rdf#wilayaName> "24- Guelma"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya25> <out.rdf#wilayaName> "25- Constantine"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya26> <out.rdf#wilayaName> "26- Medea"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya27> <out.rdf#wilayaName> "27- Mostaganem"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya28> <out.rdf#wilayaName> "28- M'Sila"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya29> <out.rdf#wilayaName> "29- Mascara"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya30> <out.rdf#wilayaName> "30- Ouargla"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya31> <out.rdf#wilayaName> "31- Oran"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya32> <out.rdf#wilayaName> "32- El Bayadh"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya33> <out.rdf#wilayaName> "33- Illizi"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya34> <out.rdf#wilayaName> "34- Bordj Bou Arreridj"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya35> <out.rdf#wilayaName> "35- Boumerdes"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya36> <out.rdf#wilayaName> "36- El Tarf"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya37> <out.rdf#wilayaName> "37- Tindouf"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya38> <out.rdf#wilayaName> "38- Tissemsilt"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya39> <out.rdf#wilayaName> "39- El Oued"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya40> <out.rdf#wilayaName> "40- Khenchela"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya41> <out.rdf#wilayaName> "41- Souk Ahras"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya42> <out.rdf#wilayaName> "42- Tipaza"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya43> <out.rdf#wilayaName> "43- Mila"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya44> <out.rdf#wilayaName> "44- Ain Defla"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya45> <out.rdf#wilayaName> "45- Naama"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya46> <out.rdf#wilayaName> "46- Ain Temouchent"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya47> <out.rdf#wilayaName> "47- Ghardaia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#wilaya48> <out.rdf#wilayaName> "48- Relizane"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#inWilaya> <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name> "wilaya"^^<http://www.w3.org/2001/XMLSchema#string> .
+<out.rdf#inDayra> <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name> "dayra"^^<http://www.w3.org/2001/XMLSchema#string> .

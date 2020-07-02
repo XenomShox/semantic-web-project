@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% block head %}
+<meta id="symptom-data" data-diseases="{{ patient.diseases }}" />
+<title>Consultations</title>
+<style>
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: start;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    span.input-group-text,
+    button {
+        transition: all 150ms ease-in-out;
+    }
+    span.input-group-text:hover {
+        background-color: #eb554b;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+{% endblock %} {% block body %}
+<div class="container d-flex flex-column align-items-center">
+    <h1 class="mb-5">Ajouter Vos maladies chronique</h1>
+    <form
+        action="/consultation/create/asign_diseases/{{ patient.idconsultation }}/{{ patient.id }}"
+        method="POST"
+        class="w-75"
+    >
+        <div
+            class="form-group d-flex flex-column justify-content-start align-items-center"
+            id="diseases-inputs"
+        ></div>
+        <div class="form-group">
+            <button id="add-disease-button" class="btn btn-success">
+                Add disease
+            </button>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </form>
+    <script>
+        function addInput(val) {
+            const formGroup = $("div#diseases-inputs");
+
+            const rem = $("<button></button>", {
+                type: "button",
+                class: "btn btn-outline-secondary",
+            }).text("X");
+
+            rem.click((e) => {
+                e.preventDefault();
+                rem.parent().remove();
+            });
+
+            const div = $("<div></div>", {
+                class: "input-group mb-3",
+            });
+
+            const labelDiv = $("<div></div", {
+                class: "input-group-prepend",
+            }).append(
+                $("<span></span>", {
+                    class: "input-group-text",
+                }).text("Delete")
+            );
+
+            labelDiv.click((e) => {
+                e.preventDefault();
+                labelDiv.parent().remove();
+            });
+
+            const input = $("<input />", {
+                type: "text",
+                name: "diseases[]",
+                class: "form-control w-75",
+                placeholder: "maladie",
+                value: val
+            });
+
+            div.append(labelDiv);
+            div.append(input);
+            formGroup.append(div);
+        }
+
+        let diseases  = {{ patient.diseases|safe }}
+        diseases.forEach(disease => {
+            addInput(disease);
+        })
+        addInput("");
+        // let symptomData = $("#symptom-data").data();
+        // console.log(symptomData.diseases.match(new RegExp("'(.+)'+")));
+        $("button#add-disease-button").click((e) => {
+            e.preventDefault();
+            addInput("");
+        });
+        // for (let i = 0; i < labelDivs.length; i++) {
+        //     labelDivs[i].click((e) => {
+        //         e.preventDefault();
+        //         console.log(labelDivs[i].parent());
+        //     });
+        // }
+    </script>
+</div>
+{% endblock %}

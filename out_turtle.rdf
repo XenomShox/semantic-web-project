@@ -1,0 +1,336 @@
+@prefix ns1: <file:///E:/Learning/projects/web_sem_proj/out.rdf#> .
+@prefix ns2: <http://www.w3.org/2002/07/owl#> .
+@prefix ns3: <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///E:/Learning/projects/web_sem_proj/out.rdf> a ns2:Ontology .
+
+ns1:age a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range xsd:integer .
+
+ns1:date a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:consultation ;
+    rdfs:range xsd:string .
+
+ns1:dayraName a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:dayra ;
+    rdfs:range xsd:string .
+
+ns1:familyName a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:person ;
+    rdfs:range xsd:string .
+
+ns1:gender a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:person ;
+    rdfs:range xsd:string .
+
+ns1:givenName a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:person ;
+    rdfs:range xsd:string .
+
+ns1:output a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:consultation ;
+    rdfs:range xsd:string .
+
+ns1:symptomsPresented a ns2:ObjectProperty ;
+    rdfs:domain ns1:consultation ;
+    rdfs:range ns1:symptoms .
+
+ns1:wilaya1 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "1- Adrar"^^xsd:string .
+
+ns1:wilaya10 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "10- Bouira"^^xsd:string .
+
+ns1:wilaya11 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "11- Tamanrasset"^^xsd:string .
+
+ns1:wilaya12 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "12- Tebessa"^^xsd:string .
+
+ns1:wilaya13 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "13- Tlemcen"^^xsd:string .
+
+ns1:wilaya14 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "14- Tiaret"^^xsd:string .
+
+ns1:wilaya15 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "15- Tizi Ouzou"^^xsd:string .
+
+ns1:wilaya16 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "16- Alger"^^xsd:string .
+
+ns1:wilaya17 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "17- Djelfa"^^xsd:string .
+
+ns1:wilaya18 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "18- Jijel"^^xsd:string .
+
+ns1:wilaya19 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "19- Setif"^^xsd:string .
+
+ns1:wilaya2 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "2- Chlef"^^xsd:string .
+
+ns1:wilaya20 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "20- Saida"^^xsd:string .
+
+ns1:wilaya21 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "21- Skikda"^^xsd:string .
+
+ns1:wilaya22 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "22- Sidi Bel Abbes"^^xsd:string .
+
+ns1:wilaya23 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "23- Annaba"^^xsd:string .
+
+ns1:wilaya24 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "24- Guelma"^^xsd:string .
+
+ns1:wilaya25 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "25- Constantine"^^xsd:string .
+
+ns1:wilaya26 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "26- Medea"^^xsd:string .
+
+ns1:wilaya27 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "27- Mostaganem"^^xsd:string .
+
+ns1:wilaya28 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "28- M'Sila"^^xsd:string .
+
+ns1:wilaya29 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "29- Mascara"^^xsd:string .
+
+ns1:wilaya3 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "3- Laghouat"^^xsd:string .
+
+ns1:wilaya30 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "30- Ouargla"^^xsd:string .
+
+ns1:wilaya31 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "31- Oran"^^xsd:string .
+
+ns1:wilaya32 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "32- El Bayadh"^^xsd:string .
+
+ns1:wilaya33 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "33- Illizi"^^xsd:string .
+
+ns1:wilaya34 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "34- Bordj Bou Arreridj"^^xsd:string .
+
+ns1:wilaya35 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "35- Boumerdes"^^xsd:string .
+
+ns1:wilaya36 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "36- El Tarf"^^xsd:string .
+
+ns1:wilaya37 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "37- Tindouf"^^xsd:string .
+
+ns1:wilaya38 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "38- Tissemsilt"^^xsd:string .
+
+ns1:wilaya39 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "39- El Oued"^^xsd:string .
+
+ns1:wilaya4 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "4- Oum El Bouaghi"^^xsd:string .
+
+ns1:wilaya40 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "40- Khenchela"^^xsd:string .
+
+ns1:wilaya41 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "41- Souk Ahras"^^xsd:string .
+
+ns1:wilaya42 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "42- Tipaza"^^xsd:string .
+
+ns1:wilaya43 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "43- Mila"^^xsd:string .
+
+ns1:wilaya44 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "44- Ain Defla"^^xsd:string .
+
+ns1:wilaya45 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "45- Naama"^^xsd:string .
+
+ns1:wilaya46 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "46- Ain Temouchent"^^xsd:string .
+
+ns1:wilaya47 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "47- Ghardaia"^^xsd:string .
+
+ns1:wilaya48 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "48- Relizane"^^xsd:string .
+
+ns1:wilaya5 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "5- Batna"^^xsd:string .
+
+ns1:wilaya6 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "6- Bejaia"^^xsd:string .
+
+ns1:wilaya7 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "7- Biskra"^^xsd:string .
+
+ns1:wilaya8 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "8- Bechar"^^xsd:string .
+
+ns1:wilaya9 a ns1:wilaya,
+        ns2:NamedIndividual ;
+    ns1:wilayaName "9- Blida"^^xsd:string .
+
+ns1:wilayaName a ns2:DatatypeProperty,
+        ns2:FunctionalProperty ;
+    rdfs:domain ns1:wilaya ;
+    rdfs:range xsd:string .
+
+ns1:containPatientDayra a ns2:ObjectProperty ;
+    rdfs:domain ns1:dayra ;
+    rdfs:range ns1:patient ;
+    ns2:inverseOf ns1:inDayra .
+
+ns1:containPatientWilaya a ns2:ObjectProperty ;
+    rdfs:domain ns1:wilaya ;
+    rdfs:range ns1:patient ;
+    ns2:inverseOf ns1:inWilaya .
+
+ns1:diseases a ns2:Class ;
+    rdfs:subClassOf ns2:Thing .
+
+ns1:hadConsultation a ns2:ObjectProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:consultation ;
+    ns2:inverseOf ns1:hasPatient .
+
+ns1:hasDisease a ns2:ObjectProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:diseases ;
+    ns2:inverseOf ns1:isDiseaseOf .
+
+ns1:hasPatient a ns2:FunctionalProperty,
+        ns2:ObjectProperty ;
+    rdfs:domain ns1:consultation ;
+    rdfs:range ns1:patient ;
+    ns2:inverseOf ns1:hadConsultation .
+
+ns1:hasSymptom a ns2:ObjectProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:symptoms ;
+    ns2:inverseOf ns1:isSymptomOf .
+
+ns1:hasTraitment a ns2:ObjectProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:traitments ;
+    ns2:inverseOf ns1:isTraitmentOf .
+
+ns1:inDayra a ns2:FunctionalProperty,
+        ns2:ObjectProperty ;
+    ns3:python_name "dayra"^^xsd:string ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:dayra ;
+    ns2:inverseOf ns1:containPatientDayra .
+
+ns1:inWilaya a ns2:FunctionalProperty,
+        ns2:ObjectProperty ;
+    ns3:python_name "wilaya"^^xsd:string ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:wilaya ;
+    ns2:inverseOf ns1:containPatientWilaya .
+
+ns1:isDiseaseOf a ns2:ObjectProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:symptoms ;
+    ns2:inverseOf ns1:hasDisease .
+
+ns1:isSymptomOf a ns2:ObjectProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:symptoms ;
+    ns2:inverseOf ns1:hasSymptom .
+
+ns1:isTraitmentOf a ns2:ObjectProperty ;
+    rdfs:domain ns1:patient ;
+    rdfs:range ns1:symptoms ;
+    ns2:inverseOf ns1:hasTraitment .
+
+ns1:traitments a ns2:Class ;
+    rdfs:subClassOf ns2:Thing .
+
+ns1:location a ns2:Class ;
+    rdfs:subClassOf ns2:Thing .
+
+ns1:dayra a ns2:Class ;
+    rdfs:subClassOf ns1:location .
+
+ns1:person a ns2:Class ;
+    rdfs:subClassOf ns2:Thing .
+
+ns1:consultation a ns2:Class ;
+    rdfs:subClassOf ns2:Thing .
+
+ns1:symptoms a ns2:Class ;
+    rdfs:subClassOf ns2:Thing .
+
+ns1:patient a ns2:Class ;
+    rdfs:subClassOf ns1:person .
+
+ns1:wilaya a ns2:Class ;
+    rdfs:subClassOf ns1:location .
+

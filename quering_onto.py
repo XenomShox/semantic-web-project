@@ -8,7 +8,6 @@ def addPatient(givenName, familyName, gender, age, dayra, wilaya, symps):
     w = find_v2(onto.wilaya, {
         "wilayaName": wilaya
     })[0]
-    print(w)
 
     _patient = patient(givenName=givenName, familyName=familyName,
                        gender=gender, age=age, wilaya=w)
@@ -61,7 +60,7 @@ def write(patientList):  # give her the getpatients method
 # you give her the getConsultations method as an argument returns a list of dictionaries.
 
 
-def symptomsToList(X):
+def opToList(X):
     lis = []
     for L in X:
         lis.append(L.name)
@@ -82,7 +81,7 @@ def getConsultationData(_consultation):
         "date": _consultation.date,
         "output": _consultation.output,
         "id": _consultation.name,
-        "symptoms": symptomsToList(_consultation.symptomsPresented)
+        "symptoms": opToList(_consultation.symptomsPresented)
     }
     return consultationDic
 
@@ -95,7 +94,9 @@ def getPatientData(_patient):  # you give her a patient and it returns it's data
         "wilaya": _patient.wilaya.wilayaName,
         # "dayra": _patient.dayra.dayraName,
         "age": _patient.age,
-        "symptoms": symptomsToList(_patient.hasSymptom)
+        "symptoms": opToList(_patient.hasSymptom),
+        "chronic_diseases": opToList(_patient.hasDisease),
+        "traitments" : opToList(_patient.hasTraitment)
     }
     return patientDic
 

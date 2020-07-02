@@ -4,10 +4,14 @@
     body {
         height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: space-between;
+        padding: 10px;
     }
 </style>
 {% endblock %} {% block body %}
+<div class="container"></div>
 <div class="container">
     <div class="jumbotron text-center">
         <h1 class="display-4">
@@ -29,6 +33,32 @@
             role="button"
             >Make a consultation</a
         >
+    </div>
+</div>
+<div class="container d-flex justify-content-center">
+    <div
+        class="btn-toolbar"
+        role="toolbar"
+        aria-label="Toolbar with button groups"
+    >
+        <div class="btn-group" role="group" aria-label="First group">
+            <a href="/clear/patients" class="btn btn-secondary"
+                >Clear Patients</a
+            >
+            <a href="/clear/consultations" class="btn btn-secondary"
+                >Clear Consultations</a
+            >
+            <a href="/clear/symptoms" class="btn btn-secondary"
+                >Clear Symptoms</a
+            >
+            <a href="/clear/diseases" class="btn btn-secondary"
+                >Clear Diseases</a
+            >
+            <a href="/clear/traitments" class="btn btn-secondary"
+                >Clear Traitments</a
+            >
+            <a href="/clear/all" class="btn btn-secondary">Clear All</a>
+        </div>
     </div>
 </div>
 {% endblock %}

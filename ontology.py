@@ -47,9 +47,39 @@ with onto:
                     self.hasSymptom.append(onto.search(
                         iri="*" + symp.replace(' ', '_'))[0])
 
+        def asignDiseases(self, _diseases):
+            for disease in _diseases:
+                disease = disease.lower()
+                if (onto.search(iri="*" + disease.replace(' ', '_')) == []):
+                    S = diseases()
+                    S.iri = ns + disease.replace(' ', '_')
+                    self.hasDisease.append(S)
+                else:
+                    self.hasDisease.append(onto.search(
+                        iri="*" + disease.replace(' ', '_'))[0])
+
+        def asignTraitments(self, _traitments):
+            for traitment in _traitments:
+                traitment = traitment.lower()
+                if (onto.search(iri="*" + traitment.replace(' ', '_')) == []):
+                    S = traitments()
+                    S.iri = ns + traitment.replace(' ', '_')
+                    self.hasTraitment.append(S)
+                else:
+                    self.hasTraitment.append(onto.search(
+                        iri="*" + traitment.replace(' ', '_'))[0])
+
         def asignNewSymptoms(self, symps):
             self.hasSymptom = []
             self.asignSymptoms(symps)
+            
+        def asignNewDiseases(self, diseases):
+            self.hasDisease = []
+            self.asignDiseases(diseases)
+        
+        def asignNewTraitments(self, traitments):
+            self.hasTraitment = []
+            self.asignTraitments(traitments)
 
     # class location(Thing):
     #     pass
@@ -94,16 +124,35 @@ with onto:
         domain = [patient]
         range = [int]
 
+    class isSymptomOf(patient >> symptoms):
+        pass
+
     class hasSymptom(ObjectProperty):
         domain = [patient]
         range = [symptoms]
+        inverse_property = isSymptomOf
 
-    class chronicDesease(Thing):
+    class diseases(Thing):
         pass
 
-    class hasChronicDesease(ObjectProperty):
+    class isDiseaseOf(patient >> symptoms):
+        pass
+
+    class hasDisease(ObjectProperty):
         domain = [patient]
-        range = [chronicDesease]
+        range = [diseases]
+        inverse_property = isDiseaseOf
+
+    class traitments(Thing):
+        pass
+
+    class isTraitmentOf(patient >> symptoms):
+        pass
+
+    class hasTraitment(ObjectProperty):
+        domain = [patient]
+        range = [traitments]
+        inverse_property = isTraitmentOf
 
     class consultation(Thing):
         def asignSymptoms(self, symps):

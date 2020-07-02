@@ -32,6 +32,22 @@
                 Dayra: {{consultation.patient.dayra}}
             </p>
             <p class="card-text">
+                diseases :
+                <ol>
+                    {% for disease in consultation.patient.chronic_diseases %}
+                        <li style="text-transform: capitalize;">{{ disease.replace('_', ' ') }}</li>
+                    {% endfor %}
+                </ol>
+            </p>
+            <p class="card-text">
+                traitments :
+                <ol>
+                    {% for traitment in consultation.patient.traitments %}
+                        <li style="text-transform: capitalize;">{{ traitment.replace('_', ' ') }}</li>
+                    {% endfor %}
+                </ol>
+            </p>
+            <p class="card-text">
                 Symptoms :
                 <ol>
                     {% for symptom in consultation.symptoms %}
