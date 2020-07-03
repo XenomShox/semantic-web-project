@@ -142,7 +142,31 @@ def find_v2(_object, dic={}):
     return L
 
 
-if len(find_v2(onto.wilaya)) == 0:
+def enrich():
+    with open('./csv/dataset.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        line = 0
+        dataset = {}
+        for row in csv_reader:
+            if line == 0:
+                line += 1
+            else:
+                disease = row[0].lower().strip().replace(' ', '_')
+                dataset[disease] = dataset.get(disease, [])
+                for i in range(1, len(row)):
+                    if not row[i] == '':
+                        symptom = row[i].lower().strip().replace(
+                            ' ', '_').replace('__', '_')
+                        if symptom not in dataset[disease]:
+                            dataset[disease].append(symptom)
+
+    for key, value in dataset.items():
+        if len(find_v2(onto.diseases, {"name": key})) == 0:
+            d = diseases(key)
+        for symptom in value:
+            if len(find_v2(onto.symptoms, {"name": symptom})) == 0:
+                s = symptoms(symptom)
+
     with open('./csv/wilayas.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         # print(csv_reader)
@@ -154,3 +178,7 @@ if len(find_v2(onto.wilaya)) == 0:
                 x = wilaya(wilayaName=str(i) + "- " + row[2])
                 i += 1
     dbCommit()
+
+
+if len(find_v2(onto.wilaya)) == 0 and len(find_v2(onto.diseases)) == 0 and len(find_v2(onto.symptoms)) == 0:
+    enrich()

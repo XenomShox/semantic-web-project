@@ -2,5 +2,4 @@ env
 .vscode
 __pycache__
 old
-csv
 gay_tests.py
