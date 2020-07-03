@@ -72,17 +72,14 @@ with onto:
         def asignNewSymptoms(self, symps):
             self.hasSymptom = []
             self.asignSymptoms(symps)
-            
+
         def asignNewDiseases(self, diseases):
             self.hasDisease = []
             self.asignDiseases(diseases)
-        
+
         def asignNewTraitments(self, traitments):
             self.hasTraitment = []
             self.asignTraitments(traitments)
-
-    # class location(Thing):
-    #     pass
 
     class location(Thing):
         pass

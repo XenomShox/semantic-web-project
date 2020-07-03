@@ -1,5 +1,5 @@
 from owlready2 import *
-from ontology import onto, symptoms, ns, patient, consultation, wilaya, dayra
+from ontology import onto, symptoms, diseases, ns, patient, consultation, wilaya, dayra
 import rdflib
 import csv
 
@@ -96,7 +96,7 @@ def getPatientData(_patient):  # you give her a patient and it returns it's data
         "age": _patient.age,
         "symptoms": opToList(_patient.hasSymptom),
         "chronic_diseases": opToList(_patient.hasDisease),
-        "traitments" : opToList(_patient.hasTraitment)
+        "traitments": opToList(_patient.hasTraitment)
     }
     return patientDic
 

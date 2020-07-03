@@ -140,14 +140,14 @@ def clearAll(what):
     return redirect('/')
 
 
-@app.route('/form', methods=['GET', 'POST'])
-def form():
-    if request.method == 'POST':
-        data = request.form.getlist('name[]')
-        # print(data)
-        return redirect('/form')
-    else:
-        return render_template('form.html')
+# @app.route('/form', methods=['GET', 'POST'])
+# def form():
+#     if request.method == 'POST':
+#         data = request.form.getlist('name[]')
+#         # print(data)
+#         return redirect('/form')
+#     else:
+#         return render_template('form.html')
 
 
 if __name__ == '__main__':
