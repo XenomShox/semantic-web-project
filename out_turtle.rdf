@@ -1,852 +1,871 @@
-@prefix ns1: <file:///E:/Learning/projects/web_sem_proj/out.rdf#> .
-@prefix ns2: <http://www.w3.org/2002/07/owl#> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix ns2: <https://poneyponeymastersaga/myontology#> .
 @prefix ns3: <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///E:/Learning/projects/web_sem_proj/out.rdf> a ns2:Ontology .
+<https://poneyponeymastersaga/myontology> a ns1:Ontology .
 
-<file:///E:/Learning/projects/web_sem_proj/out.rdf#(vertigo)_paroymsal__positional_vertigo> a ns1:diseases,
-        ns2:NamedIndividual .
+<https://poneyponeymastersaga/myontology#(vertigo)_paroymsal__positional_vertigo> a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:abdominal_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:abdominal_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:abnormal_menstruation a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:abnormal_menstruation a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:acidity a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:acidity a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:acne a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:acne a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:acute_liver_failure a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:acute_liver_failure a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:age a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:patient ;
+ns2:age a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:patient ;
     rdfs:range xsd:integer .
 
-ns1:aids a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:aids a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:alcoholic_hepatitis a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:alcoholic_hepatitis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:allergy a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:allergy a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:altered_sensorium a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:altered_sensorium a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:anxiety a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:anxiety a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:arthritis a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:arthritis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:back_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:back_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:belly_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:belly_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:blackheads a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:blackheads a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:bladder_discomfort a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:bladder_discomfort a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:blister a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:blister a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:blood_in_sputum a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:blood_in_sputum a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:bloody_stool a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:bloody_stool a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:blurred_and_distorted_vision a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:blurred_and_distorted_vision a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:breathlessness a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:breathlessness a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:brittle_nails a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:brittle_nails a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:bronchial_asthma a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:bronchial_asthma a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:bruising a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:bruising a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:burning_micturition a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:burning_micturition a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:cervical_spondylosis a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:cervical_spondylosis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:chest_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:chest_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:chicken_pox a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:chicken_pox a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:chills a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:chills a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:chronic_cholestasis a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:chronic_cholestasis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:cold_hands_and_feets a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:cold_hands_and_feets a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:coma a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:coma a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:common_cold a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:common_cold a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:congestion a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:congestion a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:constipation a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:constipation a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:continuous_feel_of_urine a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:consultation1 a ns1:NamedIndividual,
+        ns2:consultation ;
+    ns2:date "2020-07-04"^^xsd:string ;
+    ns2:hasPatient ns2:patient1 ;
+    ns2:symptomsPresented ns2:high_fever .
 
-ns1:continuous_sneezing a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:continuous_feel_of_urine a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:cough a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:continuous_sneezing a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:cramps a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:cough a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:dark_urine a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:cramps a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:date a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:consultation ;
+ns2:dark_urine a ns1:NamedIndividual,
+        ns2:symptoms .
+
+ns2:date a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:consultation ;
     rdfs:range xsd:string .
 
-ns1:dayraName a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:dayra ;
+ns2:dayraName a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:dayra ;
     rdfs:range xsd:string .
 
-ns1:dehydration a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:dehydration a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:dengue a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:dengue a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:depression a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:depression a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:diabetes a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:diabetes a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:diarrhoea a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:diarrhoea a ns1:NamedIndividual,
+        ns2:symptoms .
 
-<file:///E:/Learning/projects/web_sem_proj/out.rdf#dimorphic_hemmorhoids(piles)> a ns1:diseases,
-        ns2:NamedIndividual .
+<https://poneyponeymastersaga/myontology#dimorphic_hemmorhoids(piles)> a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:dischromic_patches a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:dischromic_patches a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:distention_of_abdomen a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:distention_of_abdomen a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:dizziness a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:dizziness a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:drug_reaction a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:drug_reaction a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:drying_and_tingling_lips a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:drying_and_tingling_lips a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:enlarged_thyroid a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:enlarged_thyroid a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:excessive_hunger a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:excessive_hunger a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:extra_marital_contacts a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:extra_marital_contacts a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:familyName a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:person ;
+ns2:familyName a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:person ;
     rdfs:range xsd:string .
 
-ns1:family_history a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:family_history a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:fast_heart_rate a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:fast_heart_rate a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:fatigue a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:fatigue a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:fluid_overload a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:fluid_overload a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:foul_smell_of_urine a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:foul_smell_of_urine a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:fungal_infection a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:fungal_infection a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:gastroenteritis a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:gastroenteritis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:gender a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:person ;
+ns2:gender a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:person ;
     rdfs:range xsd:string .
 
-ns1:gerd a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:gerd a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:givenName a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:person ;
+ns2:givenName a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:person ;
     rdfs:range xsd:string .
 
-ns1:headache a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:headache a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:heart_attack a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:heart_attack a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hepatitis_a a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hepatitis_a a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hepatitis_b a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hepatitis_b a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hepatitis_c a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hepatitis_c a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hepatitis_d a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hepatitis_d a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hepatitis_e a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hepatitis_e a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:high_fever a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:hip_joint_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:hip_joint_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:history_of_alcohol_consumption a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:history_of_alcohol_consumption a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:hypertension a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hypertension a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hyperthyroidism a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hyperthyroidism a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hypoglycemia a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hypoglycemia a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:hypothyroidism a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hypothyroidism a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:impetigo a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:impetigo a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:increased_appetite a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:increased_appetite a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:indigestion a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:indigestion a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:inflammatory_nails a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:inflammatory_nails a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:internal_itching a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:internal_itching a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:irregular_sugar_level a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:irregular_sugar_level a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:irritability a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:irritability a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:irritation_in_anus a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:irritation_in_anus a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:itching a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:itching a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:jaundice a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:jaundice a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:joint_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:joint_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:knee_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:knee_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:lack_of_concentration a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:lack_of_concentration a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:lethargy a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:lethargy a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:loss_of_appetite a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:loss_of_appetite a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:loss_of_balance a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:loss_of_balance a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:loss_of_smell a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:loss_of_smell a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:malaise a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:malaise a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:malaria a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:malaria a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:migraine a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:migraine a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:mild_fever a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:mild_fever a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:mood_swings a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:mood_swings a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:movement_stiffness a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:movement_stiffness a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:mucoid_sputum a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:mucoid_sputum a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:muscle_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:muscle_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:muscle_wasting a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:muscle_wasting a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:muscle_weakness a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:muscle_weakness a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:nausea a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:nausea a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:neck_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:neck_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:nodal_skin_eruptions a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:nodal_skin_eruptions a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:obesity a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:obesity a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:osteoarthristis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:osteoarthristis a ns1:diseases,
-        ns2:NamedIndividual .
-
-ns1:output a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:consultation ;
+ns2:output a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:consultation ;
     rdfs:range xsd:string .
 
-ns1:pain_behind_the_eyes a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:pain_behind_the_eyes a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:pain_during_bowel_movements a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:pain_during_bowel_movements a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:pain_in_anal_region a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:pain_in_anal_region a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:painful_walking a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:painful_walking a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:palpitations a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:palpitations a ns1:NamedIndividual,
+        ns2:symptoms .
 
-<file:///E:/Learning/projects/web_sem_proj/out.rdf#paralysis_(brain_hemorrhage)> a ns1:diseases,
-        ns2:NamedIndividual .
+<https://poneyponeymastersaga/myontology#paralysis_(brain_hemorrhage)> a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:passage_of_gases a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:passage_of_gases a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:patches_in_throat a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:patches_in_throat a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:peptic_ulcer_diseae a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:peptic_ulcer_diseae a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:phlegm a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:phlegm a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:pneumonia a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:pneumonia a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:polyuria a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:polyuria a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:prominent_veins_on_calf a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:prominent_veins_on_calf a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:psoriasis a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:psoriasis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:puffy_face_and_eyes a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:puffy_face_and_eyes a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:pus_filled_pimples a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:pus_filled_pimples a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:receiving_blood_transfusion a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:receiving_blood_transfusion a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:receiving_unsterile_injections a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:receiving_unsterile_injections a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:red_sore_around_nose a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:red_sore_around_nose a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:red_spots_over_body a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:red_spots_over_body a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:redness_of_eyes a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:redness_of_eyes a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:restlessness a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:restlessness a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:runny_nose a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:runny_nose a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:rusty_sputum a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:rusty_sputum a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:scurring a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:scurring a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:shivering a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:shivering a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:silver_like_dusting a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:silver_like_dusting a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:sinus_pressure a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:sinus_pressure a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:skin_peeling a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:skin_peeling a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:skin_rash a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:skin_rash a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:slurred_speech a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:slurred_speech a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:small_dents_in_nails a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:small_dents_in_nails a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:spinning_movements a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:spinning_movements a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:spotting_urination a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:spotting_urination a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:stiff_neck a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:stiff_neck a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:stomach_bleeding a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:stomach_bleeding a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:stomach_pain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:stomach_pain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:sunken_eyes a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:sunken_eyes a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:sweating a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:sweating a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:swelled_lymph_nodes a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:swelled_lymph_nodes a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:swelling_joints a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:swelling_joints a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:swelling_of_stomach a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:swelling_of_stomach a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:swollen_blood_vessels a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:swollen_blood_vessels a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:swollen_extremeties a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:swollen_extremeties a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:swollen_legs a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:swollen_legs a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:symptomsPresented a ns2:ObjectProperty ;
-    rdfs:domain ns1:consultation ;
-    rdfs:range ns1:symptoms .
+ns2:symptomsPresented a ns1:ObjectProperty ;
+    rdfs:domain ns2:consultation ;
+    rdfs:range ns2:symptoms .
 
-ns1:throat_irritation a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:throat_irritation a ns1:NamedIndividual,
+        ns2:symptoms .
 
-<file:///E:/Learning/projects/web_sem_proj/out.rdf#toxic_look_(typhos)> a ns1:symptoms,
-        ns2:NamedIndividual .
+<https://poneyponeymastersaga/myontology#toxic_look_(typhos)> a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:tuberculosis a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:tuberculosis a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:typhoid a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:typhoid a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:ulcers_on_tongue a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:ulcers_on_tongue a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:unsteadiness a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:unsteadiness a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:urinary_tract_infection a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:urinary_tract_infection a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:varicose_veins a ns1:diseases,
-        ns2:NamedIndividual .
+ns2:varicose_veins a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:visual_disturbances a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:visual_disturbances a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:vomiting a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:vomiting a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:watering_from_eyes a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:watering_from_eyes a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:weakness_in_limbs a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:weakness_in_limbs a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:weakness_of_one_body_side a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:weakness_of_one_body_side a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:weight_gain a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:weight_gain a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:weight_loss a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:weight_loss a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:wilaya1 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "1- Adrar"^^xsd:string .
+ns2:wilaya1 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "1- Adrar"^^xsd:string .
 
-ns1:wilaya10 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "10- Bouira"^^xsd:string .
+ns2:wilaya10 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "10- Bouira"^^xsd:string .
 
-ns1:wilaya11 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "11- Tamanrasset"^^xsd:string .
+ns2:wilaya11 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "11- Tamanrasset"^^xsd:string .
 
-ns1:wilaya12 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "12- Tebessa"^^xsd:string .
+ns2:wilaya12 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "12- Tebessa"^^xsd:string .
 
-ns1:wilaya13 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "13- Tlemcen"^^xsd:string .
+ns2:wilaya13 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "13- Tlemcen"^^xsd:string .
 
-ns1:wilaya14 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "14- Tiaret"^^xsd:string .
+ns2:wilaya14 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "14- Tiaret"^^xsd:string .
 
-ns1:wilaya15 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "15- Tizi Ouzou"^^xsd:string .
+ns2:wilaya15 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "15- Tizi Ouzou"^^xsd:string .
 
-ns1:wilaya16 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "16- Alger"^^xsd:string .
+ns2:wilaya17 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "17- Djelfa"^^xsd:string .
 
-ns1:wilaya17 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "17- Djelfa"^^xsd:string .
+ns2:wilaya18 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "18- Jijel"^^xsd:string .
 
-ns1:wilaya18 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "18- Jijel"^^xsd:string .
+ns2:wilaya19 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "19- Setif"^^xsd:string .
 
-ns1:wilaya19 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "19- Setif"^^xsd:string .
+ns2:wilaya2 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "2- Chlef"^^xsd:string .
 
-ns1:wilaya2 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "2- Chlef"^^xsd:string .
+ns2:wilaya20 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "20- Saida"^^xsd:string .
 
-ns1:wilaya20 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "20- Saida"^^xsd:string .
+ns2:wilaya21 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "21- Skikda"^^xsd:string .
 
-ns1:wilaya21 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "21- Skikda"^^xsd:string .
+ns2:wilaya22 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "22- Sidi Bel Abbes"^^xsd:string .
 
-ns1:wilaya22 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "22- Sidi Bel Abbes"^^xsd:string .
+ns2:wilaya23 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "23- Annaba"^^xsd:string .
 
-ns1:wilaya23 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "23- Annaba"^^xsd:string .
+ns2:wilaya24 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "24- Guelma"^^xsd:string .
 
-ns1:wilaya24 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "24- Guelma"^^xsd:string .
+ns2:wilaya25 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "25- Constantine"^^xsd:string .
 
-ns1:wilaya25 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "25- Constantine"^^xsd:string .
+ns2:wilaya26 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "26- Medea"^^xsd:string .
 
-ns1:wilaya26 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "26- Medea"^^xsd:string .
+ns2:wilaya27 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "27- Mostaganem"^^xsd:string .
 
-ns1:wilaya27 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "27- Mostaganem"^^xsd:string .
+ns2:wilaya28 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "28- M'Sila"^^xsd:string .
 
-ns1:wilaya28 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "28- M'Sila"^^xsd:string .
+ns2:wilaya29 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "29- Mascara"^^xsd:string .
 
-ns1:wilaya29 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "29- Mascara"^^xsd:string .
+ns2:wilaya3 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "3- Laghouat"^^xsd:string .
 
-ns1:wilaya3 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "3- Laghouat"^^xsd:string .
+ns2:wilaya30 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "30- Ouargla"^^xsd:string .
 
-ns1:wilaya30 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "30- Ouargla"^^xsd:string .
+ns2:wilaya31 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "31- Oran"^^xsd:string .
 
-ns1:wilaya31 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "31- Oran"^^xsd:string .
+ns2:wilaya32 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "32- El Bayadh"^^xsd:string .
 
-ns1:wilaya32 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "32- El Bayadh"^^xsd:string .
+ns2:wilaya33 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "33- Illizi"^^xsd:string .
 
-ns1:wilaya33 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "33- Illizi"^^xsd:string .
+ns2:wilaya34 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "34- Bordj Bou Arreridj"^^xsd:string .
 
-ns1:wilaya34 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "34- Bordj Bou Arreridj"^^xsd:string .
+ns2:wilaya35 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "35- Boumerdes"^^xsd:string .
 
-ns1:wilaya35 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "35- Boumerdes"^^xsd:string .
+ns2:wilaya36 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "36- El Tarf"^^xsd:string .
 
-ns1:wilaya36 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "36- El Tarf"^^xsd:string .
+ns2:wilaya37 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "37- Tindouf"^^xsd:string .
 
-ns1:wilaya37 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "37- Tindouf"^^xsd:string .
+ns2:wilaya38 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "38- Tissemsilt"^^xsd:string .
 
-ns1:wilaya38 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "38- Tissemsilt"^^xsd:string .
+ns2:wilaya39 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "39- El Oued"^^xsd:string .
 
-ns1:wilaya39 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "39- El Oued"^^xsd:string .
+ns2:wilaya4 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "4- Oum El Bouaghi"^^xsd:string .
 
-ns1:wilaya4 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "4- Oum El Bouaghi"^^xsd:string .
+ns2:wilaya40 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "40- Khenchela"^^xsd:string .
 
-ns1:wilaya40 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "40- Khenchela"^^xsd:string .
+ns2:wilaya41 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "41- Souk Ahras"^^xsd:string .
 
-ns1:wilaya41 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "41- Souk Ahras"^^xsd:string .
+ns2:wilaya42 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "42- Tipaza"^^xsd:string .
 
-ns1:wilaya42 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "42- Tipaza"^^xsd:string .
+ns2:wilaya43 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "43- Mila"^^xsd:string .
 
-ns1:wilaya43 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "43- Mila"^^xsd:string .
+ns2:wilaya44 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "44- Ain Defla"^^xsd:string .
 
-ns1:wilaya44 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "44- Ain Defla"^^xsd:string .
+ns2:wilaya45 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "45- Naama"^^xsd:string .
 
-ns1:wilaya45 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "45- Naama"^^xsd:string .
+ns2:wilaya46 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "46- Ain Temouchent"^^xsd:string .
 
-ns1:wilaya46 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "46- Ain Temouchent"^^xsd:string .
+ns2:wilaya47 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "47- Ghardaia"^^xsd:string .
 
-ns1:wilaya47 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "47- Ghardaia"^^xsd:string .
+ns2:wilaya48 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "48- Relizane"^^xsd:string .
 
-ns1:wilaya48 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "48- Relizane"^^xsd:string .
+ns2:wilaya5 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "5- Batna"^^xsd:string .
 
-ns1:wilaya5 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "5- Batna"^^xsd:string .
+ns2:wilaya6 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "6- Bejaia"^^xsd:string .
 
-ns1:wilaya6 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "6- Bejaia"^^xsd:string .
+ns2:wilaya7 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "7- Biskra"^^xsd:string .
 
-ns1:wilaya7 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "7- Biskra"^^xsd:string .
+ns2:wilaya8 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "8- Bechar"^^xsd:string .
 
-ns1:wilaya8 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "8- Bechar"^^xsd:string .
+ns2:wilaya9 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "9- Blida"^^xsd:string .
 
-ns1:wilaya9 a ns1:wilaya,
-        ns2:NamedIndividual ;
-    ns1:wilayaName "9- Blida"^^xsd:string .
-
-ns1:wilayaName a ns2:DatatypeProperty,
-        ns2:FunctionalProperty ;
-    rdfs:domain ns1:wilaya ;
+ns2:wilayaName a ns1:DatatypeProperty,
+        ns1:FunctionalProperty ;
+    rdfs:domain ns2:wilaya ;
     rdfs:range xsd:string .
 
-ns1:yellow_crust_ooze a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:yellow_crust_ooze a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:yellow_urine a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:yellow_urine a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:yellowing_of_eyes a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:yellowing_of_eyes a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:yellowish_skin a ns1:symptoms,
-        ns2:NamedIndividual .
+ns2:yellowish_skin a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:containPatientDayra a ns2:ObjectProperty ;
-    rdfs:domain ns1:dayra ;
-    rdfs:range ns1:patient ;
-    ns2:inverseOf ns1:inDayra .
+ns2:containPatientDayra a ns1:ObjectProperty ;
+    rdfs:domain ns2:dayra ;
+    rdfs:range ns2:patient ;
+    ns1:inverseOf ns2:inDayra .
 
-ns1:containPatientWilaya a ns2:ObjectProperty ;
-    rdfs:domain ns1:wilaya ;
-    rdfs:range ns1:patient ;
-    ns2:inverseOf ns1:inWilaya .
+ns2:containPatientWilaya a ns1:ObjectProperty ;
+    rdfs:domain ns2:wilaya ;
+    rdfs:range ns2:patient ;
+    ns1:inverseOf ns2:inWilaya .
 
-ns1:hadConsultation a ns2:ObjectProperty ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:consultation ;
-    ns2:inverseOf ns1:hasPatient .
+ns2:diabet a ns1:NamedIndividual,
+        ns2:diseases .
 
-ns1:hasDisease a ns2:ObjectProperty ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:diseases ;
-    ns2:inverseOf ns1:isDiseaseOf .
+ns2:hadConsultation a ns1:ObjectProperty ;
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:consultation ;
+    ns1:inverseOf ns2:hasPatient .
 
-ns1:hasPatient a ns2:FunctionalProperty,
-        ns2:ObjectProperty ;
-    rdfs:domain ns1:consultation ;
-    rdfs:range ns1:patient ;
-    ns2:inverseOf ns1:hadConsultation .
+ns2:hasDisease a ns1:ObjectProperty ;
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:diseases ;
+    ns1:inverseOf ns2:isDiseaseOf .
 
-ns1:hasSymptom a ns2:ObjectProperty ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:symptoms ;
-    ns2:inverseOf ns1:isSymptomOf .
+ns2:hasPatient a ns1:FunctionalProperty,
+        ns1:ObjectProperty ;
+    rdfs:domain ns2:consultation ;
+    rdfs:range ns2:patient ;
+    ns1:inverseOf ns2:hadConsultation .
 
-ns1:hasTraitment a ns2:ObjectProperty ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:traitments ;
-    ns2:inverseOf ns1:isTraitmentOf .
+ns2:hasSymptom a ns1:ObjectProperty ;
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:symptoms ;
+    ns1:inverseOf ns2:isSymptomOf .
 
-ns1:inDayra a ns2:FunctionalProperty,
-        ns2:ObjectProperty ;
+ns2:hasTraitment a ns1:ObjectProperty ;
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:traitments ;
+    ns1:inverseOf ns2:isTraitmentOf .
+
+ns2:inDayra a ns1:FunctionalProperty,
+        ns1:ObjectProperty ;
     ns3:python_name "dayra"^^xsd:string ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:dayra ;
-    ns2:inverseOf ns1:containPatientDayra .
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:dayra ;
+    ns1:inverseOf ns2:containPatientDayra .
 
-ns1:inWilaya a ns2:FunctionalProperty,
-        ns2:ObjectProperty ;
+ns2:inWilaya a ns1:FunctionalProperty,
+        ns1:ObjectProperty ;
     ns3:python_name "wilaya"^^xsd:string ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:wilaya ;
-    ns2:inverseOf ns1:containPatientWilaya .
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:wilaya ;
+    ns1:inverseOf ns2:containPatientWilaya .
 
-ns1:isDiseaseOf a ns2:ObjectProperty ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:symptoms ;
-    ns2:inverseOf ns1:hasDisease .
+ns2:isDiseaseOf a ns1:ObjectProperty ;
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:symptoms ;
+    ns1:inverseOf ns2:hasDisease .
 
-ns1:isSymptomOf a ns2:ObjectProperty ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:symptoms ;
-    ns2:inverseOf ns1:hasSymptom .
+ns2:isSymptomOf a ns1:ObjectProperty ;
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:symptoms ;
+    ns1:inverseOf ns2:hasSymptom .
 
-ns1:isTraitmentOf a ns2:ObjectProperty ;
-    rdfs:domain ns1:patient ;
-    rdfs:range ns1:symptoms ;
-    ns2:inverseOf ns1:hasTraitment .
+ns2:isTraitmentOf a ns1:ObjectProperty ;
+    rdfs:domain ns2:patient ;
+    rdfs:range ns2:symptoms ;
+    ns1:inverseOf ns2:hasTraitment .
 
-ns1:traitments a ns2:Class ;
-    rdfs:subClassOf ns2:Thing .
+ns2:patient1 a ns1:NamedIndividual,
+        ns2:patient ;
+    ns2:age "21"^^xsd:string ;
+    ns2:familyName "Ihadjadene"^^xsd:string ;
+    ns2:gender "male"^^xsd:string ;
+    ns2:givenName "Abdelhak"^^xsd:string ;
+    ns2:hasDisease ns2:diabet ;
+    ns2:hasSymptom ns2:high_fever ;
+    ns2:inWilaya ns2:wilaya16 .
 
-ns1:location a ns2:Class ;
-    rdfs:subClassOf ns2:Thing .
+ns2:traitments a ns1:Class ;
+    rdfs:subClassOf ns1:Thing .
 
-ns1:dayra a ns2:Class ;
-    rdfs:subClassOf ns1:location .
+ns2:wilaya16 a ns1:NamedIndividual,
+        ns2:wilaya ;
+    ns2:wilayaName "16- Alger"^^xsd:string .
 
-ns1:person a ns2:Class ;
-    rdfs:subClassOf ns2:Thing .
+ns2:high_fever a ns1:NamedIndividual,
+        ns2:symptoms .
 
-ns1:consultation a ns2:Class ;
-    rdfs:subClassOf ns2:Thing .
+ns2:location a ns1:Class ;
+    rdfs:subClassOf ns1:Thing .
 
-ns1:patient a ns2:Class ;
-    rdfs:subClassOf ns1:person .
+ns2:dayra a ns1:Class ;
+    rdfs:subClassOf ns2:location .
 
-ns1:diseases a ns2:Class ;
-    rdfs:subClassOf ns2:Thing .
+ns2:person a ns1:Class ;
+    rdfs:subClassOf ns1:Thing .
 
-ns1:wilaya a ns2:Class ;
-    rdfs:subClassOf ns1:location .
+ns2:consultation a ns1:Class ;
+    rdfs:subClassOf ns1:Thing .
 
-ns1:symptoms a ns2:Class ;
-    rdfs:subClassOf ns2:Thing .
+ns2:patient a ns1:Class ;
+    rdfs:subClassOf ns2:person .
+
+ns2:diseases a ns1:Class ;
+    rdfs:subClassOf ns1:Thing .
+
+ns2:wilaya a ns1:Class ;
+    rdfs:subClassOf ns2:location .
+
+ns2:symptoms a ns1:Class ;
+    rdfs:subClassOf ns1:Thing .
 

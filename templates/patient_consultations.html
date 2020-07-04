@@ -7,22 +7,18 @@
 </style>
 {% endblock %} {% block body %}
 <div class="container">
+    <h2>
+    {{ consultations[0].patient.givenName + " " +
+                    consultations[0].patient.familyName }}</h2>
     <div class="container-fluid d-flex flex-wrap justify-content-around">
         {% for consultation in consultations %}
         <div class="card text-center mb-5" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">
-                    {{ consultation.patient.givenName + " " +
-                    consultation.patient.familyName }}
-                </h5>
                 <p class="card-text">
-                    {{ consultation.patient.gender }} - {{
-                    consultation.patient.age }}
-                    <br />
                     {{ consultation.date }}
                 </p>
                 <a
-                    href="/consultations/{{ consultation.id }}"
+                    href="/consultation_check/{{ consultation.id }}"
                     class="btn btn-primary"
                     >Check Consultation</a
                 >

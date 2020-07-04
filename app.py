@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 from ontology import onto, consultation, symptoms, patient
 from quering_onto import find_v2, getIndividualsByClass, clearIndividualsByClass, addPatient, addConsultation, opToList, dbCommit, getPatient, getConsultationsData, getConsultationData, getIndividualByURI
 
 app = Flask(__name__)
-
+app.secret_key = 'sdhfbsdlfgqbdlfgibsdlfkhgbwdf'
 
 @app.route('/')
 def index():
@@ -17,7 +17,7 @@ def consultations():
     return render_template('consultations.html', consultations=consultations)
 
 
-@app.route('/consultation/<id>', methods=['GET', 'POST'])
+@app.route('/consultations/<id>', methods=['GET', 'POST'])
 def consultation(id):
     consultation = getIndividualByURI(id)
     consultationData = getConsultationData(consultation)
@@ -28,6 +28,50 @@ def consultation(id):
         return redirect("/consultations")
     else:
         return render_template('consultation.html', consultation=consultationData)
+
+
+@app.route('/patient', methods=['GET', 'POST'])
+def patient():
+    if request.method == 'POST':
+        givenName = request.form['givenName']
+        familyName = request.form['familyName']
+        age = request.form['age']
+        gender = request.form['gender']
+        _patient = find_v2(onto.patient, {
+            "givenName": givenName,
+            "familyName": familyName,
+            "age": age,
+            "gender": gender
+        })
+        print(_patient)
+        if len(_patient) == 0:
+            flash(f'No patient named {givenName} {familyName}', 'error')
+            return redirect('/patient')
+        else:
+            return redirect('/patient_consultations/' + _patient[0].name)
+    else:
+        return render_template('patient.html')
+
+
+@app.route('/patient_consultations/<idpatient>')
+def patient_consultations(idpatient):
+    _patient = getIndividualByURI(idpatient)
+    csMap = _patient.hadConsultation
+    consultations = getConsultationsData(csMap)
+    return render_template('patient_consultations.html', consultations=consultations)
+
+
+@app.route('/consultation_check/<id>', methods=['GET', 'POST'])
+def consultation_check(id):
+    consultation = getIndividualByURI(id)
+    consultationData = getConsultationData(consultation)
+    if request.method == 'POST':
+        # print(request.form['output'].split('\n'))
+        consultation.output = request.form['output'].replace('\r', '')
+        dbCommit()
+        return redirect("/consultations_check")
+    else:
+        return render_template('consultation_check.html', consultation=consultationData)
 
 
 @app.route('/consultation/create', methods=['GET', 'POST'])
@@ -148,7 +192,6 @@ def clearAll(what):
 #         return redirect('/form')
 #     else:
 #         return render_template('form.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)

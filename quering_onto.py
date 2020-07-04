@@ -36,16 +36,16 @@ def getConsultations():
 
 
 def dbCommit():
-    onto.save(file="out.rdf", format="ntriples")
+    onto.save(file="out.owl", format="ntriples")
     graph = rdflib.Graph()
-    graph.parse("out.rdf", format='turtle')
+    graph.parse("out.owl", format='turtle')
     graph.serialize('out_turtle.rdf', format='turtle')
 
 
 def clearIndividualsByClass(classs):
-    symps = onto.search(type=classs)
-    for i in symps:
-        destroy_entity(i)
+    individuals = onto.search(type=classs)
+    for individual in individuals:
+        destroy_entity(individual)
 
 
 def write(patientList):  # give her the getpatients method
@@ -56,8 +56,6 @@ def write(patientList):  # give her the getpatients method
         writer.writeheader()
         for _patient in patientList:
             writer.writerow(getPatientData(_patient))
-
-# you give her the getConsultations method as an argument returns a list of dictionaries.
 
 
 def opToList(X):
@@ -142,7 +140,7 @@ def find_v2(_object, dic={}):
     return L
 
 
-def enrich():
+def enrichSymptomsDiseases():
     with open('./csv/dataset.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line = 0
@@ -167,6 +165,10 @@ def enrich():
             if len(find_v2(onto.symptoms, {"name": symptom})) == 0:
                 s = symptoms(symptom)
 
+    dbCommit()
+
+
+def enrichWilaya():
     with open('./csv/wilayas.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         # print(csv_reader)
@@ -180,5 +182,8 @@ def enrich():
     dbCommit()
 
 
-if len(find_v2(onto.wilaya)) == 0 and len(find_v2(onto.diseases)) == 0 and len(find_v2(onto.symptoms)) == 0:
-    enrich()
+if len(find_v2(onto.wilaya)) == 0:
+    enrichWilaya()
+
+if len(find_v2(onto.diseases)) == 0 and len(find_v2(onto.symptoms)) == 0:
+    enrichSymptomsDiseases()

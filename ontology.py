@@ -1,20 +1,15 @@
 from owlready2 import *
 import datetime
 import pandas as pd
-from openpyxl import load_workbook
 import rdflib
-import os
-from os.path import isfile
 
 ns = "https://poneyponeymastersaga/myontology#"
 
-if not isfile('./out.rdf'):
-    open('out.rdf', 'w')
-if not isfile('./out_turtle.rdf'):
-    open('out_turtle.rdf', 'w')
 
+open('out.owl', 'a')
+open('out_turtle.rdf', 'a')
 
-onto = get_ontology("out.rdf").load()
+onto = get_ontology("out.owl").load()
 
 with onto:
     class person(Thing):

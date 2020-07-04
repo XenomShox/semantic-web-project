@@ -1,0 +1,116 @@
+{% extends 'base.html' %} {% block head %}
+<title>Consultations</title>
+<style>
+    body {
+        padding-top: 30px;
+    }
+    div.form-row {
+        margin-bottom: 40px;
+    }
+    input[type="submit"] {
+        transition: all 150ms ease-in-out;
+    }
+</style>
+{% endblock %} {% block body %}
+<div class="container">
+    <h2 class="text-center mb-5">Créer une Consultation</h2>
+    <form action="/patient" method="POST" class="w-75 mx-auto">
+        <div class="form-row">
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Nom et Prenom</span>
+                    </div>
+                    <input
+                        type="text"
+                        aria-label="First name"
+                        class="form-control"
+                        placeholder="Prenom"
+                        name="givenName"
+                        required
+                    />
+                    <input
+                        type="text"
+                        aria-label="Last name"
+                        class="form-control"
+                        placeholder="Nom"
+                        name="familyName"
+                        required
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input
+                                type="radio"
+                                id="Male-radio"
+                                value="male"
+                                name="gender"
+                                requried
+                                aria-label="Radio button for following text input"
+                            />
+                        </div>
+                    </div>
+                    <span
+                        style="width: 80px;"
+                        class="input-group-text"
+                        id="Male-radio"
+                        >Male</span
+                    >
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input
+                                type="radio"
+                                id="Male-radio"
+                                value="female"
+                                name="gender"
+                                requried
+                                aria-label="Radio button for following text input"
+                            />
+                        </div>
+                    </div>
+                    <span
+                        style="width: 80px;"
+                        class="input-group-text"
+                        id="Male-radio"
+                        >Female</span
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Age</span>
+                    </div>
+                    <input
+                        type="number"
+                        class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)"
+                        placeholder="18"
+                        name="age"
+                        min="1"
+                        required
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="form-row text-center">
+            <div class="col">
+                <input
+                    type="submit"
+                    class="btn btn-outline-dark btn-lg btn-block"
+                    value="SUBMIT"
+                />
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
