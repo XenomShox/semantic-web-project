@@ -89,7 +89,7 @@ def getPatientData(_patient):  # you give her a patient and it returns it's data
         "givenName": _patient.givenName,
         "familyName": _patient.familyName,
         "gender": _patient.gender,
-        "wilaya": _patient.wilaya.wilayaName,
+        "wilaya": _patient.wilaya.wilayaName.split(' ')[-1],
         # "dayra": _patient.dayra.dayraName,
         "age": _patient.age,
         "symptoms": opToList(_patient.hasSymptom),

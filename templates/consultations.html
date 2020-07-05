@@ -3,32 +3,50 @@
 <style>
     body {
         padding-top: 30px;
+        height: 100vh;
     }
 </style>
 {% endblock %} {% block body %}
-<div class="container">
+<div class="container h-100 d-flex flex-column flex-wrap justify-content-around align-content-center">
+    <div></div>
     <div class="container-fluid d-flex flex-wrap justify-content-around">
-        {% for consultation in consultations %}
-        <div class="card text-center mb-5" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">
-                    {{ consultation.patient.givenName + " " +
-                    consultation.patient.familyName }}
-                </h5>
-                <p class="card-text">
-                    {{ consultation.patient.gender }} - {{
-                    consultation.patient.age }}
-                    <br />
-                    {{ consultation.date }}
-                </p>
-                <a
-                    href="/consultations/{{ consultation.id }}"
-                    class="btn btn-primary"
-                    >Check Consultation</a
-                >
+        {% if not consultations %}
+            <div class="jumbotron w-100">
+                <h1 class="display-4">Liste des Consultations</h1>
+                <p class="lead">Cette page contient les consultations des patients</p>
+                <hr class="my-4">
+                <p>Ce message est affiché car aucune consultation n'est sauvgardé.</p>
             </div>
-        </div>
-        {% endfor %}
+        {% else %}
+            {% for consultation in consultations %}
+                <div class="card text-center mb-5" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ consultation.patient.givenName + " " +
+                            consultation.patient.familyName }}
+                        </h5>
+                        <p class="card-text">
+                            {{ consultation.patient.gender }} - {{
+                            consultation.patient.age }}
+                            <br />
+                            {{ consultation.date }}
+                        </p>
+                        <div class="d-flex justify-content-around">
+                            <a
+                            href="/consultations/{{ consultation.id }}"
+                            class="btn btn-primary"
+                            >Check</a
+                            >
+                            <a
+                                href="/consultations/{{ consultation.id }}/delete"
+                                class="btn btn-danger"
+                                >Delete</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
     <div class="container-fluid text-center">
         <a href="/" class="btn btn-primary">Home</a>

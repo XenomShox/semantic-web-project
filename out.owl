@@ -537,12 +537,8 @@
 <https://poneyponeymastersaga/myontology#red_sore_around_nose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://poneyponeymastersaga/myontology#symptoms> .
 <https://poneyponeymastersaga/myontology#yellow_crust_ooze> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://poneyponeymastersaga/myontology#yellow_crust_ooze> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://poneyponeymastersaga/myontology#symptoms> .
-<https://poneyponeymastersaga/myontology#inWilaya> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#containPatientWilaya> .
-<https://poneyponeymastersaga/myontology#inDayra> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#containPatientDayra> .
-<https://poneyponeymastersaga/myontology#hasSymptom> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#isSymptomOf> .
-<https://poneyponeymastersaga/myontology#hasDisease> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#isDiseaseOf> .
-<https://poneyponeymastersaga/myontology#hasTraitment> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#isTraitmentOf> .
-<https://poneyponeymastersaga/myontology#hasPatient> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#hadConsultation> .
+<https://poneyponeymastersaga/myontology#diabet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://poneyponeymastersaga/myontology#diabet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://poneyponeymastersaga/myontology#diseases> .
 <https://poneyponeymastersaga/myontology#patient1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://poneyponeymastersaga/myontology#patient1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://poneyponeymastersaga/myontology#patient> .
 <https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#inWilaya> <https://poneyponeymastersaga/myontology#wilaya16> .
@@ -550,10 +546,19 @@
 <https://poneyponeymastersaga/myontology#consultation1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://poneyponeymastersaga/myontology#consultation> .
 <https://poneyponeymastersaga/myontology#consultation1> <https://poneyponeymastersaga/myontology#hasPatient> <https://poneyponeymastersaga/myontology#patient1> .
 <https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#hasSymptom> <https://poneyponeymastersaga/myontology#high_fever> .
+<https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#hasSymptom> <https://poneyponeymastersaga/myontology#headache> .
 <https://poneyponeymastersaga/myontology#consultation1> <https://poneyponeymastersaga/myontology#symptomsPresented> <https://poneyponeymastersaga/myontology#high_fever> .
-<https://poneyponeymastersaga/myontology#diabet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://poneyponeymastersaga/myontology#diabet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://poneyponeymastersaga/myontology#diseases> .
+<https://poneyponeymastersaga/myontology#consultation1> <https://poneyponeymastersaga/myontology#symptomsPresented> <https://poneyponeymastersaga/myontology#headache> .
 <https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#hasDisease> <https://poneyponeymastersaga/myontology#diabet> .
+<https://poneyponeymastersaga/myontology#rahmet_rabi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://poneyponeymastersaga/myontology#rahmet_rabi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://poneyponeymastersaga/myontology#traitments> .
+<https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#hasTraitment> <https://poneyponeymastersaga/myontology#rahmet_rabi> .
+<https://poneyponeymastersaga/myontology#inWilaya> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#containPatientWilaya> .
+<https://poneyponeymastersaga/myontology#inDayra> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#containPatientDayra> .
+<https://poneyponeymastersaga/myontology#hasSymptom> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#isSymptomOf> .
+<https://poneyponeymastersaga/myontology#hasDisease> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#isDiseaseOf> .
+<https://poneyponeymastersaga/myontology#hasTraitment> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#isTraitmentOf> .
+<https://poneyponeymastersaga/myontology#hasPatient> <http://www.w3.org/2002/07/owl#inverseOf> <https://poneyponeymastersaga/myontology#hadConsultation> .
 <https://poneyponeymastersaga/myontology#wilaya1> <https://poneyponeymastersaga/myontology#wilayaName> "1- Adrar"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#wilaya2> <https://poneyponeymastersaga/myontology#wilayaName> "2- Chlef"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#wilaya3> <https://poneyponeymastersaga/myontology#wilayaName> "3- Laghouat"^^<http://www.w3.org/2001/XMLSchema#string> .
@@ -602,10 +607,11 @@
 <https://poneyponeymastersaga/myontology#wilaya46> <https://poneyponeymastersaga/myontology#wilayaName> "46- Ain Temouchent"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#wilaya47> <https://poneyponeymastersaga/myontology#wilayaName> "47- Ghardaia"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#wilaya48> <https://poneyponeymastersaga/myontology#wilayaName> "48- Relizane"^^<http://www.w3.org/2001/XMLSchema#string> .
-<https://poneyponeymastersaga/myontology#inWilaya> <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name> "wilaya"^^<http://www.w3.org/2001/XMLSchema#string> .
-<https://poneyponeymastersaga/myontology#inDayra> <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name> "dayra"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#givenName> "Abdelhak"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#familyName> "Ihadjadene"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#gender> "male"^^<http://www.w3.org/2001/XMLSchema#string> .
 <https://poneyponeymastersaga/myontology#patient1> <https://poneyponeymastersaga/myontology#age> "21"^^<http://www.w3.org/2001/XMLSchema#string> .
-<https://poneyponeymastersaga/myontology#consultation1> <https://poneyponeymastersaga/myontology#date> "2020-07-04"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://poneyponeymastersaga/myontology#consultation1> <https://poneyponeymastersaga/myontology#date> "2020-07-05"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://poneyponeymastersaga/myontology#inWilaya> <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name> "wilaya"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://poneyponeymastersaga/myontology#inDayra> <http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name> "dayra"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://poneyponeymastersaga/myontology#consultation1> <https://poneyponeymastersaga/myontology#output> "This dude needs to chill\nrelax\nand eat pussy"^^<http://www.w3.org/2001/XMLSchema#string> .

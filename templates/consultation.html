@@ -48,7 +48,7 @@
                 </ol>
             </p>
             <p class="card-text">
-                Symptoms :
+                Symptoms : 
                 <ol>
                     {% for symptom in consultation.symptoms %}
                         <li style="text-transform: capitalize;">{{ symptom.replace('_', ' ') }}</li>
@@ -57,7 +57,7 @@
             </p>
         </div>
         <div class="card-footer">
-            <form action="/consultation/{{ consultation.id }}" method="POST">
+            <form action="/consultations/{{ consultation.id }}" method="POST">
                 <div class="form-group">
                     <label for="verdict">Verdict do Medecin</label>
                     {% if consultation.output is not none %}

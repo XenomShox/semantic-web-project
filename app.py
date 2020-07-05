@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash
 from ontology import onto, consultation, symptoms, patient
-from quering_onto import find_v2, getIndividualsByClass, clearIndividualsByClass, addPatient, addConsultation, opToList, dbCommit, getPatient, getConsultationsData, getConsultationData, getIndividualByURI
+from owlready2 import *
+from quering_onto import find_v2, getPatientData, getIndividualsByClass, clearIndividualsByClass, addPatient, addConsultation, opToList, dbCommit, getPatient, getConsultationsData, getConsultationData, getIndividualByURI
 
 app = Flask(__name__)
 app.secret_key = 'sdhfbsdlfgqbdlfgibsdlfkhgbwdf'
@@ -19,7 +20,12 @@ def consultations():
 
 @app.route('/consultations/<id>', methods=['GET', 'POST'])
 def consultation(id):
-    consultation = getIndividualByURI(id)
+    # consultation = getIndividualByURI(id)
+    consultation = find_v2(onto.consultation, {"name": id})
+    if len(consultation) == 0:
+        flash("This consultation doesn't exist", 'error')
+        return redirect('/consultations')
+    consultation = consultation[0]
     consultationData = getConsultationData(consultation)
     if request.method == 'POST':
         # print(request.form['output'].split('\n'))
@@ -28,6 +34,17 @@ def consultation(id):
         return redirect("/consultations")
     else:
         return render_template('consultation.html', consultation=consultationData)
+
+@app.route('/consultations/<id>/delete')
+def deleteConsultation(id):
+    consultation = find_v2(onto.consultation, {"name": id})
+    if len(consultation) == 0:
+        flash("This consultation doesn't exist", 'error')
+        return redirect('/consultations')
+    consultation = consultation[0]
+    destroy_entity(consultation)
+    dbCommit()
+    return redirect('/consultations')
 
 
 @app.route('/patient', methods=['GET', 'POST'])
@@ -43,7 +60,6 @@ def patient():
             "age": age,
             "gender": gender
         })
-        print(_patient)
         if len(_patient) == 0:
             flash(f'No patient named {givenName} {familyName}', 'error')
             return redirect('/patient')
@@ -55,23 +71,25 @@ def patient():
 
 @app.route('/patient_consultations/<idpatient>')
 def patient_consultations(idpatient):
-    _patient = getIndividualByURI(idpatient)
+    _patient = find_v2(onto.patient, {"name": idpatient})
+    if len(_patient) == 0:
+        flash('Patient Not Found', 'error')
+        return redirect('/patient')
+    _patient = _patient[0]
     csMap = _patient.hadConsultation
     consultations = getConsultationsData(csMap)
-    return render_template('patient_consultations.html', consultations=consultations)
+    return render_template('patient_consultations.html', patient=getPatientData(_patient), consultations=consultations)
 
 
-@app.route('/consultation_check/<id>', methods=['GET', 'POST'])
+@app.route('/consultation_check/<id>')
 def consultation_check(id):
-    consultation = getIndividualByURI(id)
+    consultation = find_v2(onto.consultation, {"name": id})
+    if len(consultation) == 0:
+        flash('Consultation Not Found', 'error')
+        return redirect('/')
+    consultation = consultation[0]
     consultationData = getConsultationData(consultation)
-    if request.method == 'POST':
-        # print(request.form['output'].split('\n'))
-        consultation.output = request.form['output'].replace('\r', '')
-        dbCommit()
-        return redirect("/consultations_check")
-    else:
-        return render_template('consultation_check.html', consultation=consultationData)
+    return render_template('consultation_check.html', consultation=consultationData)
 
 
 @app.route('/consultation/create', methods=['GET', 'POST'])

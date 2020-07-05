@@ -3,13 +3,20 @@
 <style>
     body {
         padding-top: 30px;
+        padding-bottom: 30px;
+        min-height: 100vh;
+    }
+    .main-color {
+        color: rgb(160, 10, 190);
+    }
+    .main-bg-color {
+        color: white;
+        background-color: rgb(160, 10, 190);
     }
 </style>
 {% endblock %} {% block body %}
-<div class="container">
-    <h2>
-    {{ consultations[0].patient.givenName + " " +
-                    consultations[0].patient.familyName }}</h2>
+<div class="container h-100">
+    <!-- <h2 class="display-4">{{ patient.givenName + " " + patient.familyName }}</h2>
     <div class="container-fluid d-flex flex-wrap justify-content-around">
         {% for consultation in consultations %}
         <div class="card text-center mb-5" style="width: 18rem;">
@@ -19,15 +26,46 @@
                 </p>
                 <a
                     href="/consultation_check/{{ consultation.id }}"
-                    class="btn btn-primary"
-                    >Check Consultation</a
-                >
+                    class="btn btn-primary">
+                    Consultation
+                </a>
             </div>
         </div>
         {% endfor %}
     </div>
     <div class="container-fluid text-center">
         <a href="/" class="btn btn-primary">Home</a>
+    </div> -->
+    <div class="jumbotron text-center">
+        <h2 class="display-4">{{ patient.givenName + " " + patient.familyName }}</h2>
+        <hr class="my-4">
+        <h4 class="text-muted">Age: {{ patient.age }} ans</h4>
+        <h4 class="text-muted">Sexe: {{ patient.gender }}</h4>
+        <h4 class="text-muted">Wilaya: {{ patient.wilaya }}</h4>
+    </div>
+
+    <div class="container">
+        <h5 class="display-4">Consultations</h5>
+        <hr class="my-4">
+        <div class="card-deck">
+            {% for consultation in consultations %}
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-text text-muted">
+                        {{ consultation.date }}
+                    </h4>
+                    <a
+                        href="/consultation_check/{{ consultation.id }}"
+                        class="btn btn-primary">
+                        Check
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container mt-5">
+        <a href="/" class="btn btn-outline-dark">Home</a>
     </div>
 </div>
 {% endblock %}
