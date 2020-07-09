@@ -3,6 +3,8 @@ from ontology import onto, symptoms, diseases, ns, patient, consultation, wilaya
 import rdflib
 import csv
 
+# Une fonction qui permet de créer un individue patient
+
 
 def addPatient(givenName, familyName, gender, age, wilaya, symps):
     w = find_v2(onto.wilaya, {
@@ -14,13 +16,7 @@ def addPatient(givenName, familyName, gender, age, wilaya, symps):
     _patient.asignSymptoms(symps)
     return _patient
 
-
-def getPatient(iri):
-    return onto.search(iri=ns+iri)[0]
-
-
-def getPatients():
-    return onto.search(type=patient)
+# Fonction qui permet de créer un individue consultation
 
 
 def addConsultation(_patient):
@@ -31,8 +27,23 @@ def addConsultation(_patient):
     return _consultation
 
 
+# Fonction pour recuperer un patient a partir de son "name"
+def getPatient(iri):
+    return onto.search(iri=ns+iri)[0]
+
+# Fonction pour recuperer tous les Patients
+
+
+def getPatients():
+    return onto.search(type=patient)
+
+# Fonction pour recuperer toutes les Consultations
+
+
 def getConsultations():
     return onto.search(type=consultation)
+
+# Fonction qui permet de sauvgarder notre current Graph
 
 
 def dbCommit():
@@ -41,21 +52,29 @@ def dbCommit():
     graph.parse("out.owl", format='turtle')
     graph.serialize('out_turtle.rdf', format='turtle')
 
+# fonction qui clear tous les individues d'une class donnée
+
 
 def clearIndividualsByClass(classs):
     individuals = onto.search(type=classs)
     for individual in individuals:
         destroy_entity(individual)
 
+# Helper function pour get tous les individues d'une class
 
-# def write(patientList):  # give her the getpatients method
-#     with open('patinets.csv', mode='w') as csv_file:
-#         fieldnames = ['givenName', 'familyName', 'gender',
-#                       'wilaya', 'dayra', 'age', 'symptoms']
-#         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-#         writer.writeheader()
-#         for _patient in patientList:
-#             writer.writerow(getPatientData(_patient))
+
+def getIndividualsByClass(c):
+    return onto.search(type=c)
+
+# Helper function pour get un individue a partir de son iri
+
+
+def getIndividualByURI(iri):
+    return onto.search(iri="*" + iri)[0]
+
+
+# Helper function qui permet de transformer une liste d'individues (symptomes, traitement, Maladies)
+# en une liste de strings, pour afficher
 
 
 def opToList(X):
@@ -63,6 +82,9 @@ def opToList(X):
     for L in X:
         lis.append(L.name)
     return lis
+
+# Helper function qui prend une liste de consultations et retourne une liste
+# de Dictionaire qui represente une consultation, aussi pour affichage
 
 
 def getConsultationsData(csMap):
@@ -72,7 +94,7 @@ def getConsultationsData(csMap):
     return consultationsList
 
 
-# you give her a consultation and it returns it's data in a dic
+# Helper function utilisé dans getConsultationsData
 def getConsultationData(_consultation):
     consultationDic = {
         "patient": getPatientData(_consultation.hasPatient),
@@ -82,6 +104,17 @@ def getConsultationData(_consultation):
         "symptoms": opToList(_consultation.symptomsPresented)
     }
     return consultationDic
+
+
+# Helper function qui prend une liste de patients et retourne une liste
+# de Dictionaire qui represente un patient, aussi pour affichage
+def getPatientsData(patients):
+    patientsList = []
+    for _patient in patients:
+        patientsList.append(getPatientData(_patient))
+    return patientsList
+
+# Helper function utilisé dans getPatientsData
 
 
 def getPatientData(_patient):  # you give her a patient and it returns it's data in a dic
@@ -97,14 +130,6 @@ def getPatientData(_patient):  # you give her a patient and it returns it's data
         "traitments": opToList(_patient.hasTraitment)
     }
     return patientDic
-
-
-# you give her the getpatients method as an argument sand it returns a list of dictionaries
-def getPatientsData(patients):
-    patientsList = []
-    for _patient in patients:
-        patientsList.append(getPatientData(_patient))
-    return patientsList
 
 
 def getSymptomData(_symptom):
@@ -123,14 +148,7 @@ def getSymptomsData(symptoms):
     return symptomsList
 
 
-def getIndividualsByClass(c):
-    return onto.search(type=c)
-
-
-def getIndividualByURI(iri):
-    return onto.search(iri="*" + iri)[0]
-
-
+# Older version of find_v2
 def find_v1(clas, attributes):
     individuals = getIndividualsByClass(clas)
     lis = []
@@ -144,6 +162,12 @@ def find_v1(clas, attributes):
             lis.append(individual)
     return lis
 
+# Au debut on utiliser les fonction getIndividualByURI et getIndividualByClass
+# On a ensuite pensé a une idée, pour éviter les requetes sparql
+# Donc on a crée une fonction generique pour chercher des individues avec des contraintes
+# par exmp: on veut chercher in individue dans la class patient, qui on pour givenName: 'Abdelhak'
+# et pour familyName: 'Ihadjadene', donc on écrit find_v2(onto.patient, {'givenName': 'Abdelhak', 'familyName': 'Ihadjadene'})
+
 
 def find_v2(_object, dic={}):
     objects = getIndividualsByClass(_object)
@@ -154,6 +178,8 @@ def find_v2(_object, dic={}):
         if s == _s:
             L.append(o)
     return L
+
+# les 2 prochaines fonction sont des fonction d'enraichissement de notre ontology
 
 
 def enrichSymptomsDiseases():
@@ -203,6 +229,8 @@ if len(find_v2(onto.wilaya)) == 0:
 
 if len(find_v2(onto.diseases)) == 0 and len(find_v2(onto.symptoms)) == 0:
     enrichSymptomsDiseases()
+
+# Les 2 prochaines fonction sont utilisé pour extraire un fichier CSV de nos patient et consultations
 
 
 def CSV_patients():
