@@ -106,6 +106,19 @@ def getPatientsData(patients):
         patientsList.append(getPatientData(_patient))
     return patientsList
 
+def getSymptomData(_symptom):
+    symptomDic = {
+        "name": _symptom.name,
+        "N": len(_symptom.isSymptomOf),
+        "patients": opToList(_symptom.isSymptomOf)
+    }
+    return symptomDic
+
+def getSymptomsData(symptoms):
+    symptomsList = []
+    for _symptom in symptoms:
+        symptomsList.append(getPatientData(_symptom))
+    return symptomsList
 
 def getIndividualsByClass(c):
     return onto.search(type=c)

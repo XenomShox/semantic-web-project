@@ -8,7 +8,6 @@
         align-items: center;
         justify-content: space-between;
         padding: 10px;
-        background-image: url('..\SVG\Asset 1.svg');
     }
 </style>
 {% endblock %} {% block body %}
@@ -16,27 +15,28 @@
 <div class="container">
     <div class="jumbotron text-center">
         <h1 class="display-4">
-            welcome to our humble web app!
+            choose your action
         </h1>
         <p class="lead">
-            L’open data sur les données d’évolution de la maladie du covid-19
+            what would you like to do?
         </p>
         <hr class="my-4" />
         <p>
-            choose your side
+            choose below
         </p>
+        <a 
+            class="btn btn-primary btn-lg" 
+            href="/consultations" 
+            role="button"
+            >Get all consultations
+        </a>
         <a
             class="btn btn-primary btn-lg"
-            href="/as_doctor"
+            href="/patient"
             role="button"
-            >Medcin</a
-        >
-        <a
-            class="btn btn-primary btn-lg"
-            href="/as_patient"
-            role="button"
-            >patient</a
-        >
+            >check the consultations of a patient
+        </a>
+
     </div>
 </div>
 <div class="container d-flex justify-content-center">

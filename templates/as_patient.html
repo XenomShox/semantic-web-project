@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block head %}
+<title>CORONAVIRUS</title>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+</style>
+{% endblock %} {% block body %}
+<div class="container"></div>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">
+            choose your action
+        </h1>
+        <p class="lead">
+            what would you like to do?
+        </p>
+        <hr class="my-4" />
+        <p>
+            choose below
+        </p>
+        <a
+            class="btn btn-primary btn-lg"
+            href="/consultation/create"
+            role="button"
+            >Make a consultation
+        </a>
+        <a
+            class="btn btn-primary btn-lg"
+            href="/patient"
+            role="button"
+            >check your consultations
+        </a>
+
+    </div>
+</div>
+{% endblock %}

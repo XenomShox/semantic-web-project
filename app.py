@@ -10,6 +10,13 @@ app.secret_key = 'sdhfbsdlfgqbdlfgibsdlfkhgbwdf'
 def index():
     return render_template('index.html')
 
+@app.route('/as_doctor')
+def as_doctor():
+    return render_template('as_doctor.html')
+
+@app.route('/as_patient')
+def as_patient():
+    return render_template('as_patient.html')
 
 @app.route('/consultations')
 def consultations():
