@@ -4,7 +4,7 @@ import rdflib
 import csv
 
 
-def addPatient(givenName, familyName, gender, age, dayra, wilaya, symps):
+def addPatient(givenName, familyName, gender, age, wilaya, symps):
     w = find_v2(onto.wilaya, {
         "wilayaName": wilaya
     })[0]
@@ -48,14 +48,14 @@ def clearIndividualsByClass(classs):
         destroy_entity(individual)
 
 
-def write(patientList):  # give her the getpatients method
-    with open('patinets.csv', mode='w') as csv_file:
-        fieldnames = ['givenName', 'familyName', 'gender',
-                      'wilaya', 'dayra', 'age', 'symptoms']
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writeheader()
-        for _patient in patientList:
-            writer.writerow(getPatientData(_patient))
+# def write(patientList):  # give her the getpatients method
+#     with open('patinets.csv', mode='w') as csv_file:
+#         fieldnames = ['givenName', 'familyName', 'gender',
+#                       'wilaya', 'dayra', 'age', 'symptoms']
+#         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+#         writer.writeheader()
+#         for _patient in patientList:
+#             writer.writerow(getPatientData(_patient))
 
 
 def opToList(X):
@@ -106,6 +106,7 @@ def getPatientsData(patients):
         patientsList.append(getPatientData(_patient))
     return patientsList
 
+
 def getSymptomData(_symptom):
     symptomDic = {
         "name": _symptom.name,
@@ -114,11 +115,13 @@ def getSymptomData(_symptom):
     }
     return symptomDic
 
+
 def getSymptomsData(symptoms):
     symptomsList = []
     for _symptom in symptoms:
         symptomsList.append(getPatientData(_symptom))
     return symptomsList
+
 
 def getIndividualsByClass(c):
     return onto.search(type=c)
@@ -200,3 +203,57 @@ if len(find_v2(onto.wilaya)) == 0:
 
 if len(find_v2(onto.diseases)) == 0 and len(find_v2(onto.symptoms)) == 0:
     enrichSymptomsDiseases()
+
+
+def CSV_patients():
+    with open('patients.csv', 'w', newline='') as csv_file:
+        fieldnames = ['id', "Nom", 'Prenom', 'Sexe', 'Age',
+                      'Wilaya', 'Symptoms', 'Maladies', 'Traitement']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        patients = getPatientsData(find_v2(onto.patient))
+        id = 1
+        for patient in patients:
+            objToWrite = {
+                'id': str(id),
+                'Nom': patient['familyName'],
+                'Prenom': patient['givenName'],
+                'Age': patient['age'],
+                'Sexe': patient['gender'],
+                'Wilaya': patient['wilaya'],
+                'Symptoms': " - ".join(patient['symptoms']).replace('_', ' '),
+                'Maladies': " - ".join(patient['chronic_diseases']).replace('_', ' '),
+                'Traitement': " - ".join(patient['traitments']).replace('_', ' ')
+            }
+            writer.writerow(objToWrite)
+            id += 1
+
+
+def CSV_consultations():
+    # consultationDic = {
+    #     "patient": getPatientData(_consultation.hasPatient),
+    #     "date": _consultation.date,
+    #     "output": _consultation.output,
+    #     "id": _consultation.name,
+    #     "symptoms": opToList(_consultation.symptomsPresented)
+    # }
+    with open('consultations.csv', 'w', newline='') as csv_file:
+        fieldnames = ['id', "Nom Complet",
+                      'Symptoms pendent consultation', 'Date', 'Verdict']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        consultations = getConsultationsData(find_v2(onto.consultation))
+        id = 1
+        for consultation in consultations:
+            objToWrite = {
+                'id': str(id),
+                'Nom Complet': consultation['patient']['givenName'] + " " + consultation['patient']['familyName'],
+                'Symptoms pendent consultation': " - ".join(consultation['symptoms']).replace('_', ' '),
+                'Date': consultation['date'],
+                'Verdict': consultation['output']
+            }
+
+            if objToWrite['Verdict']:
+                objToWrite['Verdict'].replace('\n', ' ')
+            writer.writerow(objToWrite)
+            id += 1

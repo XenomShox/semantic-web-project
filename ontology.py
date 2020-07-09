@@ -9,6 +9,7 @@ ns = "https://poneyponeymastersaga/myontology#"
 open('out.owl', 'a')
 open('out_turtle.rdf', 'a')
 
+onto = get_ontology(ns)
 onto = get_ontology("out.owl").load()
 
 with onto:

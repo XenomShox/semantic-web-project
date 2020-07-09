@@ -40,8 +40,8 @@
                 </div>
             </div>
         </div>
-        <div class="form-row">
-            <div class="col-2">
+        <div class="form-row justify-content-center">
+            <div class="col-3">
                 <div class="form-check">
                     <input
                         class="form-check-input"
@@ -69,21 +69,7 @@
                     </label>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="input-group mb-3">
-                    <select
-                        name="wilaya"
-                        multiple
-                        class="form-control"
-                        id="exampleFormControlSelect1"
-                    >
-                        {% for wilaya in wilayas %}
-                        <option value="{{ wilaya }}">{{ wilaya }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-            <div class="col-2">
+            <div class="col-3">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Age</span>
@@ -99,22 +85,20 @@
                     />
                 </div>
             </div>
-            <div class="col-4">
+        </div>
+        <div class="form-row justify-content-center">
+            <div class="col-6">
                 <div class="input-group mb-3">
-                    <input
-                        type="text"
+                    <select
+                        name="wilaya"
+                        multiple
                         class="form-control"
-                        placeholder="Dayra"
-                        aria-label="Dayra"
-                        aria-describedby="basic-addon2"
-                        name="dayra"
-                        required
-                    />
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon2"
-                            >Draria</span
-                        >
-                    </div>
+                        id="exampleFormControlSelect1"
+                    >
+                        {% for wilaya in wilayas %}
+                        <option value="{{ wilaya }}">{{ wilaya }}</option>
+                        {% endfor %}
+                    </select>
                 </div>
             </div>
         </div>

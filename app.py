@@ -1,22 +1,26 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, send_from_directory, Response
 from ontology import onto, consultation, symptoms, patient
 from owlready2 import *
-from quering_onto import find_v2, getPatientData, getIndividualsByClass, clearIndividualsByClass, addPatient, addConsultation, opToList, dbCommit, getPatient, getConsultationsData, getConsultationData, getIndividualByURI
+from quering_onto import CSV_consultations, CSV_patients, find_v2, getPatientData, getIndividualsByClass, clearIndividualsByClass, addPatient, addConsultation, opToList, dbCommit, getPatient, getConsultationsData, getConsultationData, getIndividualByURI
 
 app = Flask(__name__)
 app.secret_key = 'sdhfbsdlfgqbdlfgibsdlfkhgbwdf'
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/as_doctor')
 def as_doctor():
     return render_template('as_doctor.html')
 
+
 @app.route('/as_patient')
 def as_patient():
     return render_template('as_patient.html')
+
 
 @app.route('/consultations')
 def consultations():
@@ -41,6 +45,7 @@ def consultation(id):
         return redirect("/consultations")
     else:
         return render_template('consultation.html', consultation=consultationData)
+
 
 @app.route('/consultations/<id>/delete')
 def deleteConsultation(id):
@@ -107,7 +112,6 @@ def createConsultation():
         gender = request.form['gender']
         wilaya = request.form['wilaya']
         age = request.form['age']
-        dayra = request.form['dayra']
         try:
             patients = find_v2(onto.patient, {
                 "givenName": givenName,
@@ -116,7 +120,7 @@ def createConsultation():
             _patient = None
             if len(patients) == 0:
                 _patient = addPatient(givenName, familyName,
-                                      gender, age, dayra, wilaya, [])
+                                      gender, age, wilaya, [])
             else:
                 _patient = patients[0]
             _consultation = addConsultation(_patient)
@@ -209,14 +213,16 @@ def clearAll(what):
     return redirect('/')
 
 
-# @app.route('/form', methods=['GET', 'POST'])
-# def form():
-#     if request.method == 'POST':
-#         data = request.form.getlist('name[]')
-#         # print(data)
-#         return redirect('/form')
-#     else:
-#         return render_template('form.html')
+@app.route('/download/<file>')
+def download(file):
+    if file == "patients":
+        CSV_patients()
+        return send_from_directory('./', 'patients.csv', as_attachment=True)
+    elif file == "consultations":
+        CSV_patients()
+        return send_from_directory('./', 'consultations.csv', as_attachment=True)
+    return redirect('/')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

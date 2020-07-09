@@ -3,17 +3,14 @@
 <style>
     body {
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
         padding: 10px;
     }
 </style>
 {% endblock %} {% block body %}
-<div class="container"></div>
-<div class="container">
-    <div class="jumbotron text-center">
+<div
+    class="container d-flex flex-column justify-content-center align-items-center h-100"
+>
+    <div class="jumbotron text-center w-100">
         <h1 class="display-4">
             choose your action
         </h1>
@@ -21,48 +18,35 @@
             what would you like to do?
         </p>
         <hr class="my-4" />
-        <p>
-            choose below
-        </p>
-        <a 
-            class="btn btn-primary btn-lg" 
-            href="/consultations" 
-            role="button"
-            >Get all consultations
-        </a>
-        <a
-            class="btn btn-primary btn-lg"
-            href="/patient"
-            role="button"
-            >check the consultations of a patient
-        </a>
-
-    </div>
-</div>
-<div class="container d-flex justify-content-center">
-    <div
-        class="btn-toolbar"
-        role="toolbar"
-        aria-label="Toolbar with button groups"
-    >
-        <div class="btn-group" role="group" aria-label="First group">
-            <a href="/clear/patients" class="btn btn-secondary"
-                >Clear Patients</a
-            >
-            <a href="/clear/consultations" class="btn btn-secondary"
-                >Clear Consultations</a
-            >
-            <a href="/clear/symptoms" class="btn btn-secondary"
-                >Clear Symptoms</a
-            >
-            <a href="/clear/diseases" class="btn btn-secondary"
-                >Clear Diseases</a
-            >
-            <a href="/clear/traitments" class="btn btn-secondary"
-                >Clear Traitments</a
-            >
-            <a href="/clear/all" class="btn btn-secondary">Clear All</a>
+        <div class="row">
+            <div class="col">
+                <a
+                    class="btn btn-primary btn-lg btn-block"
+                    href="/consultations"
+                    role="button"
+                    >Get all consultations
+                </a>
+                <a
+                    class="btn btn-primary btn-lg btn-block"
+                    href="/patient"
+                    role="button"
+                    >check the consultations of a patient
+                </a>
+                <a
+                    class="btn btn-primary btn-lg btn-block"
+                    href="/download/patients"
+                    role="button"
+                    >Paitents -> CSV</a
+                >
+                <a
+                    class="btn btn-primary btn-lg btn-block"
+                    href="/download/consultations"
+                    role="button"
+                    >Consultations -> CSV</a
+                >
+            </div>
         </div>
+        <a class="btn btn-primary btn-lg mt-2" href="/" role="button">Home</a>
     </div>
 </div>
 {% endblock %}

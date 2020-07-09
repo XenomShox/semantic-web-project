@@ -8,7 +8,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 10px;
-        background-image: url('..\SVG\Asset 1.svg');
+        /* background-image: url("{{ url_for('static', filename='Asset_1.svg') }}"); */
     }
 </style>
 {% endblock %} {% block body %}
@@ -25,16 +25,10 @@
         <p>
             choose your side
         </p>
-        <a
-            class="btn btn-primary btn-lg"
-            href="/as_doctor"
-            role="button"
-            >Medcin</a
+        <a class="btn btn-primary btn-lg" href="/as_doctor" role="button"
+            >Medecin</a
         >
-        <a
-            class="btn btn-primary btn-lg"
-            href="/as_patient"
-            role="button"
+        <a class="btn btn-primary btn-lg" href="/as_patient" role="button"
             >patient</a
         >
     </div>
@@ -62,6 +56,7 @@
                 >Clear Traitments</a
             >
             <a href="/clear/all" class="btn btn-secondary">Clear All</a>
+            <a href="/downloadpatients" class="btn btn-secondary">Download</a>
         </div>
     </div>
 </div>
