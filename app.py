@@ -219,7 +219,7 @@ def download(file):
         CSV_patients()
         return send_from_directory('./', 'patients.csv', as_attachment=True)
     elif file == "consultations":
-        CSV_patients()
+        CSV_consultations()
         return send_from_directory('./', 'consultations.csv', as_attachment=True)
     return redirect('/')
 
