@@ -7,5 +7,5 @@ cd semantic-web-project
 pip install -r requirements.txt
 python app.py
 ```
-==We worked with Python 3.8.3==
 Open your browser and go to -> [http://localhost:5000/](http://localhost:5000/)
+**We worked with Python 3.8.3**
