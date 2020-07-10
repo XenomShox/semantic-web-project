@@ -56,7 +56,7 @@
         <div class="card-footer">
             <form action="/consultations/{{ consultation.id }}" method="POST">
                 <div class="form-group">
-                    <label for="verdict">Verdict do Medecin</label>
+                    <label for="verdict">Verdict du Medecin</label>
                     {% if consultation.output is not none %}
                     <textarea class="form-control" id="verdict" rows="6" name="output">{{ consultation.output }}</textarea>
                     {% else %}
